@@ -48,8 +48,9 @@ pipeline {
 		
 		stage('Build') {       
 			steps {         
-				echo "------------>Build<------------"   
-				sh 'gradle --b ./build.gradle build' 				
+				echo "------------>Build<------------"
+				//Construir sin tarea test que se ejecutó previamente   
+				sh 'gradle --b ./build.gradle build -x test' 				
 			}     
 		}    
 	}
@@ -66,7 +67,7 @@ pipeline {
 		
 		failure {
  			echo 'This will run only if failed'
- 			 mail (to: 'nancy.yanza@ceiba.com.co',subject:"Failed Pipeline:${currentBuild.fullDisplayName}",body:"Algo paso con ${env.BUILD_URL}")
+ 			mail (to: 'nancy.yanza@ceiba.com.co',subject:"Failed Pipeline:${currentBuild.fullDisplayName}",body:"Algo paso con ${env.BUILD_URL}")
   
  		}    
 		

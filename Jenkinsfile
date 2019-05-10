@@ -27,7 +27,7 @@ pipeline {
 		stage('Unit Tests') {       
 			steps{         
 				echo "------------>Test unitarios<------------" 
-				sh 'gradle --b ./build.gradle test'
+				sh 'gradle --b /build.gradle test'
 			}     
 		}
 		
@@ -50,7 +50,7 @@ pipeline {
 			steps {         
 				echo "------------>Build<------------"
 				//Construir sin tarea test que se ejecutó previamente   
-				sh 'gradle --b ./build.gradle build' 				
+				sh 'gradle --b /build.gradle build' 				
 			}     
 		}    
 	}

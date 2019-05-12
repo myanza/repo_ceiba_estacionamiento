@@ -7,12 +7,18 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity(name = "movil")
 @Table(name = "movil")
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@mov_placa")
 public class MovilEntity {
 
 	@Id
@@ -26,6 +32,7 @@ public class MovilEntity {
 	private String mov_tipoMovil;
 
 	@OneToMany(mappedBy = "movil", cascade = CascadeType.ALL)
+	//@JsonManagedReference
 	private Set<FacturaEntity> facturasEntity;
 
 	public String getMovPlaca() {

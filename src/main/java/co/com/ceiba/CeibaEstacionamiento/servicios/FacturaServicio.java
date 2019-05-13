@@ -25,7 +25,7 @@ public class FacturaServicio
 	public FacturaRepositorio facturaRepositorio;
 	
 	@Autowired
-	private MovilServicio movilServicio;
+	public MovilServicio movilServicio;
 
 	@Autowired
 	private CostoEstadiaServicio costoEstadiaServicio;
@@ -38,7 +38,6 @@ public class FacturaServicio
 	public static final String MOVIL_REGISTRADO = "Este movil ya se encuentra en el estacionamiento.";
 	
 	
-	
 	public List<FacturaDTO> getListadoMovilesEstacionamiento()
 	{
 		FacturaDTOBuilder facturaDTOBuilder = new FacturaDTOBuilder();
@@ -47,43 +46,58 @@ public class FacturaServicio
 		return listadoFacturaDTO;
 	}
 	
-	private Movil crearMovilDominio(MovilDTO movilDTO)
+	public Movil crearMovilDominio(MovilDTO movilDTO)
 	{
 		String placa = movilDTO.getPlaca();
 		double cilindraje = movilDTO.getCilindraje();
 		String tipoMovil = movilDTO.getTipoMovil();
 		
-		Movil movil = new Movil(placa, cilindraje, tipoMovil);
-		return movil;
+		return new Movil(placa, cilindraje, tipoMovil);
 	}
 	
-	private Integer getCantidadMovilesByTipo(String tipoMovil) 
+	public Integer getCantidadMovilesByTipo(String tipoMovil) 
 	{
-		return facturaRepositorio.getCantidadMovilesByTipo(tipoMovil);
-	}
-	
-	private void hayEspacioEstacionamiento(Movil movil)
-	{
-		if (movil.getTipoMovil() == "CARRO") 
+		try
 		{
-			Integer cantCarrosEstacionamiento = this.getCantidadMovilesByTipo("CARRO");
-			if (cantCarrosEstacionamiento >= CANTIDAD_MAXIMA_CARROS) 
-			{
-				throw new SinEspacioException(SIN_ESPACIO_ESTACIONAMIENTO);
-			}
-		} 
-		else 
-		{
-			Integer cantMotosEstacionamiento = this.getCantidadMovilesByTipo("MOTO");
-			if (cantMotosEstacionamiento >= CANTIDAD_MAXIMA_MOTOS) 
-			{
-				throw new SinEspacioException(SIN_ESPACIO_ESTACIONAMIENTO);
-			}
-
+			return facturaRepositorio.getCantidadMovilesByTipo(tipoMovil);
 		}
+		catch(Exception e)
+		{
+			System.out.println("estoy en getCantidadMovilesByTipo ="+e.getMessage());
+		}
+		return 0;
 	}
 	
-	private boolean esDiaPermitido() 
+	public void hayEspacioEstacionamiento(Movil movil)
+	{
+		try
+		{
+			if (movil.getTipoMovil() == "CARRO") 
+			{
+				Integer cantCarrosEstacionamiento = this.getCantidadMovilesByTipo("CARRO");
+				if (cantCarrosEstacionamiento >= CANTIDAD_MAXIMA_CARROS) 
+				{
+					throw new SinEspacioException(SIN_ESPACIO_ESTACIONAMIENTO);
+				}
+			} 
+			else 
+			{
+				Integer cantMotosEstacionamiento = this.getCantidadMovilesByTipo("MOTO");
+				if (cantMotosEstacionamiento >= CANTIDAD_MAXIMA_MOTOS) 
+				{
+					throw new SinEspacioException(SIN_ESPACIO_ESTACIONAMIENTO);
+				}
+
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("ESTOY EN hayEspacioEstacionamiento = "+e.getMessage());
+		}
+		
+	}
+	
+	public boolean esDiaPermitido() 
 	{
 		Date now = new Date();
 		SimpleDateFormat simpleDateformat = new SimpleDateFormat("EEEE"); // the day of the week spelled out completely
@@ -94,7 +108,7 @@ public class FacturaServicio
         	return false;
 	}
 	
-	private void ingresaEnDiaPermitido(Movil movil) 
+	public void ingresaEnDiaPermitido(Movil movil) 
 	{
 		String placa = movil.getPlaca().toUpperCase();
 		
@@ -104,12 +118,12 @@ public class FacturaServicio
 		}
 	}
 	
-	private Integer getMovilEstacionamientoByPlaca(String placa) 
+	public Integer getMovilEstacionamientoByPlaca(String placa) 
 	{
 		return facturaRepositorio.getMovilEstacionamientoByPlaca(placa);
 	}
 	
-	private void estaEnEstacionamiento(Movil movil)
+	public void estaEnEstacionamiento(Movil movil)
 	{
 		String placa = movil.getPlaca();
 		
@@ -119,7 +133,7 @@ public class FacturaServicio
 		}
 	}
 	
-	private void crearMovilBase(Movil movil)
+	public void crearMovilBase(Movil movil)
 	{
 		String placa = movil.getPlaca();
 		
@@ -139,15 +153,22 @@ public class FacturaServicio
 		else return false;
 	}
 	
+	private void validarMovil(Movil movil)
+	{
+		hayEspacioEstacionamiento(movil);
+		//ingresaEnDiaPermitido(movil);
+		//estaEnEstacionamiento(movil);
+	}
 	
 	public boolean registrarMovil(MovilDTO movilDTO) 
 	{
-		Movil movil = crearMovilDominio(movilDTO);
-		hayEspacioEstacionamiento(movil);
-		ingresaEnDiaPermitido(movil);
-		estaEnEstacionamiento(movil);
-		crearMovilBase(movil);
-		return crearFactura(movil);
+		//Movil movil = crearMovilDominio(movilDTO);
+		//validarMovil(movil);
+		//crearMovilBase(movil);
+		//return crearFactura(movil);
+		return true;
 	}
+	
+	public boolean prueba() { return true;}
 	
 }

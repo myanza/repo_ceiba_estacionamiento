@@ -3,6 +3,7 @@ package co.com.ceiba.CeibaEstacionamiento.persistencia.repositorio;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
@@ -15,7 +16,7 @@ import co.com.ceiba.CeibaEstacionamiento.persistencia.entidades.*;
 
 @Repository
 public interface FacturaRepositorio extends CrudRepository<FacturaEntity, Integer> 
-{
+{	
 	@Query(value = "SELECT * FROM factura WHERE fac_fecha_salida IS NULL", nativeQuery = true)
 	public List<FacturaEntity> getListadoMovilesEstacionamiento();
 	

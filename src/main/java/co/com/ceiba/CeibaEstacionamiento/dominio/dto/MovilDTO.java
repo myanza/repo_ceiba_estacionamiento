@@ -1,27 +1,11 @@
-package co.com.ceiba.CeibaEstacionamiento.dominio;
+package co.com.ceiba.CeibaEstacionamiento.dominio.dto;
 
-public class Movil 
+public class MovilDTO 
 {
 	private String placa;
 	private double cilindraje;
 	private String tipoMovil;
 	
-	public Movil() {}
-	
-	public Movil(String placa, double cilindraje, String tipoMovil) 
-	{
-		this.placa = placa;
-		this.tipoMovil = tipoMovil;
-		
-		if(tipoMovil == "CARRO")
-		{
-			this.cilindraje = -1;
-		}
-		else
-		{
-			this.cilindraje = cilindraje;
-		}
-	}
 	public String getPlaca() {
 		return placa;
 	}
@@ -40,5 +24,6 @@ public class Movil
 	public void setTipoMovil(String tipoMovil) {
 		this.tipoMovil = tipoMovil;
 	}
+	
 	
 }

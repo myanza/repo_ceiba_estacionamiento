@@ -11,7 +11,6 @@ public class Factura
 	
 	public Factura(Date fechaIngreso, Date fechaSalida, double valor, Movil movil) 
 	{
-		super();
 		this.fechaIngreso = fechaIngreso;
 		this.fechaSalida = fechaSalida;
 		this.valor = valor;

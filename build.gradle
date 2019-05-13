@@ -42,7 +42,7 @@ dependencies {
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'junit:junit:4.12'
-	// https://mvnrepository.com/artifact/org.mockito/mockito-core
+	compile group: 'org.modelmapper', name: 'modelmapper', version: '0.7.5'
    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.25.0'
 	
 }

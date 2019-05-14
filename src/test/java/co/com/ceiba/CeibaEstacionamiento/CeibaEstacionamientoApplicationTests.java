@@ -10,15 +10,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CeibaEstacionamientoApplicationTests {
-	@Test
+public class CeibaEstacionamientoApplicationTests 
+{
+	/*@Test
 	public void whenValidName_thenEmployeeShouldBeFound() {
 	    String name = "alex";   
 	  
 	     assertThat("alex")
 	      .isEqualTo(name);
-	 }
-
-	
-
+	 }*/
 }

@@ -2,35 +2,40 @@ package co.com.ceiba.CeibaEstacionamiento.unitarias;
 
 import static org.junit.Assert.fail;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-/*import org.junit.runner.RunWith;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;*/
+import org.mockito.MockitoAnnotations;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-/*import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;*/
+import org.springframework.test.context.junit4.SpringRunner;
 
 import co.com.ceiba.CeibaEstacionamiento.dominio.Estacionamiento;
+import co.com.ceiba.CeibaEstacionamiento.dominio.Factura;
 import co.com.ceiba.CeibaEstacionamiento.dominio.Movil;
 import co.com.ceiba.CeibaEstacionamiento.servicios.CostoEstadiaServicioImpl;
 import co.com.ceiba.CeibaEstacionamiento.servicios.FacturaServicioImpl;
 import co.com.ceiba.CeibaEstacionamiento.servicios.MovilServicioImpl;
 import co.com.ceiba.CeibaEstacionamiento.servicios.excepciones.SinAutorizacionException;
 import co.com.ceiba.CeibaEstacionamiento.servicios.excepciones.SinEspacioException;
+import co.com.ceiba.CeibaEstacionamiento.testdatabuilder.FacturaTestDataBuilder;
 import co.com.ceiba.CeibaEstacionamiento.testdatabuilder.MovilTestDataBuilder;
 
-//@AutoConfigureTestDatabase(replace=Replace.NONE)
-//@RunWith(SpringRunner.class)
-//@DataJpaTest
+@AutoConfigureTestDatabase(replace=Replace.NONE)
+@RunWith(SpringRunner.class)
+@DataJpaTest
 public class FacturaTest 
 {
 	//@Autowired
@@ -57,6 +62,7 @@ public class FacturaTest
 	public static final String SIN_ESPACIO_ESTACIONAMIENTO = "El estacionamiento no cuenta con espacio disponible.";
 	public static final String SIN_AUTORIZACION_INGRESO = "No esta autorizado a ingresar.";
 	public static final String MOVIL_REGISTRADO = "Este movil ya se encuentra en el estacionamiento.";
+	public static final int MOVIL_ENCONTRADO = 1;
 	
 	
 	private void inicializarCostosEstadias()
@@ -202,5 +208,44 @@ public class FacturaTest
 		{
 			Assert.assertEquals(SIN_AUTORIZACION_INGRESO, e.getMessage());
 		}
+	}
+	
+	@Test
+	public void cobroHoraCarroTest() 
+	{
+		// arrange
+		MovilTestDataBuilder movilTestDataBuilder = new MovilTestDataBuilder();
+		Movil movil = movilTestDataBuilder.withTipoMovil("CARRO").withPlaca("WRR-678").withCilindraje(-1).build();
+		
+		FacturaTestDataBuilder facturaTestDataBuilder = new FacturaTestDataBuilder();
+		
+		Date fecha = new Date();
+		
+		Calendar calendar = Calendar.getInstance();
+	    calendar.setTime(fecha);
+	    calendar.add(Calendar.HOUR_OF_DAY, -1);
+	    fecha = calendar.getTime();
+	    
+		Factura factura = facturaTestDataBuilder.withFechaIngreso(fecha).withMovil(movil).build();
+		
+		Mockito.when(facturaServicio.getMovilEstacionamientoByPlaca(Mockito.anyString())).thenReturn(MOVIL_ENCONTRADO);
+		
+		Mockito.when(facturaServicio.getFacturaByPlaca(Mockito.anyString())).thenReturn(factura);
+		
+		Mockito.when(facturaServicio.actualizarFactura(Mockito.any()))
+		.thenAnswer(new Answer<Factura>() 
+		{
+			@Override
+			public Factura answer(InvocationOnMock invocation) throws Throwable 
+			{
+				Object[] args = invocation.getArguments();
+				return (Factura) args[0];
+			}
+		});
+		
+		// act
+		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
+		// assert
+		Assert.assertEquals(VALOR_HORA_CARRO, factObtenida.getValor(), 0.0);
 	}
 }

@@ -28,7 +28,7 @@ public class MovilEntity {
 	@Column(name = "mov_cilindraje", nullable = true, precision = 10, scale = 2)
 	private double mov_cilindraje;
 
-	@Column(name = "mov_tipoMovil", nullable = true, length = 5)
+	@Column(name = "mov_tipo_movil", nullable = true, length = 5)
 	private String mov_tipoMovil;
 
 	@OneToMany(mappedBy = "movil", cascade = CascadeType.ALL)

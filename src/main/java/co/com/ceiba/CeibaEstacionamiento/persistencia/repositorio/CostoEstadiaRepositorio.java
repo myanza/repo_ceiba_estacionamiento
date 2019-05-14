@@ -12,5 +12,5 @@ import co.com.ceiba.CeibaEstacionamiento.persistencia.entidades.*;
 public interface CostoEstadiaRepositorio extends CrudRepository<CostoEstadiaEntity, Integer> 
 {
 	@Query(value = "SELECT * FROM costoestadia WHERE cos_tipo_movil = :tipoMovil AND cos_tipo_pago = :tipoPago AND cos_tiempo_estadia = :tiempoEstadia", nativeQuery = true)
-	public Optional<CostoEstadiaEntity> findByTipoMovilAndTiempoEstadiaAndTipoPago(String tipoMovil, String tipoPago, String tiempoEstadia);
+	public Optional<CostoEstadiaEntity> findBy(String tipoMovil, String tipoPago, String tiempoEstadia);
 }

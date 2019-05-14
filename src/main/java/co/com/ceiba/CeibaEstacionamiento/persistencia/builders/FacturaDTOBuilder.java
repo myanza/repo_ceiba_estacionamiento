@@ -13,21 +13,21 @@ public final class FacturaDTOBuilder
 	
 	public FacturaDTOBuilder() 
 	{
-		System.out.println("--ENTRE AL CONSTRUCTOR");
+		//System.out.println("--ENTRE AL CONSTRUCTOR");
 		PropertyMap<FacturaEntity, FacturaDTO> mapFacturas = new PropertyMap<FacturaEntity, FacturaDTO>() 
 		{
 			protected void configure() 
 			{
-				System.out.println("--ENTRE AL CONFIGURE");
+				//System.out.println("--ENTRE AL CONFIGURE");
 				map().setFac_fechaIngreso(source.getFacFechaIngreso());
 				map().setFac_fechaSalida(source.getFacFechaSalida());
 				map().setMov_placa(source.getMovil().getMovPlaca());
 				map().setTipoMovil(source.getMovil().getMovTipoMovil());
 				map().setCilindraje(source.getMovil().getMovCilindraje());
-				System.out.println("---PASE EL CONFIGURE");
+				//System.out.println("---PASE EL CONFIGURE");
 			}
 		};
-		System.out.println("--ANTES DEL ADDMAPPING");
+		//System.out.println("--ANTES DEL ADDMAPPING");
 		modelMapper.addMappings(mapFacturas);
 	}
 	

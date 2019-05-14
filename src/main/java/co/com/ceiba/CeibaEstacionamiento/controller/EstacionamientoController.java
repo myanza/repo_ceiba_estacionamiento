@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import co.com.ceiba.CeibaEstacionamiento.dominio.dto.FacturaDTO;
 import co.com.ceiba.CeibaEstacionamiento.dominio.dto.MovilDTO;
+import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.CostoEstadiaServicio;
+import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.FacturaServicio;
+import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.MovilServicio;
 import co.com.ceiba.CeibaEstacionamiento.servicios.*;
 
 @RestController
@@ -25,6 +28,12 @@ public class EstacionamientoController
 {
 	@Autowired
 	private FacturaServicio facturaServicio;
+	
+	@Autowired
+	private CostoEstadiaServicio costoEstadiaServicio;
+	
+	@Autowired
+	private MovilServicio movilServicio;
 	
 	@GetMapping(value = "/listadomoviles")
 	@ResponseBody
@@ -37,6 +46,13 @@ public class EstacionamientoController
 	@ResponseStatus(value = HttpStatus.OK)
 	public void registrarMovil(@RequestBody MovilDTO movilDTO) 
 	{
-		facturaServicio.registrarMovil(movilDTO);
+		facturaServicio.registrarMovil(movilDTO, movilServicio, costoEstadiaServicio);
+	}
+	
+	@PostMapping(value = "/eliminarmovil")
+	@ResponseStatus(value = HttpStatus.OK)
+	public @ResponseBody FacturaDTO eliminarMovil(@RequestBody String placa) 
+	{
+		return facturaServicio.eliminarMovil(placa, movilServicio, costoEstadiaServicio);
 	}
 }

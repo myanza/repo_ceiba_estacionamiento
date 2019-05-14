@@ -16,7 +16,7 @@ public class FacturaBuilder
 		Factura factura = null;
 		if (facturaEntity != null) 
 		{
-			Movil movil = null;
+			Movil movil;
 			MovilBuilder movilBuilder = new MovilBuilder();
 			MovilEntity movilEntity = facturaEntity.getMovil();
 			movil = movilBuilder.convertirADominio(movilEntity);

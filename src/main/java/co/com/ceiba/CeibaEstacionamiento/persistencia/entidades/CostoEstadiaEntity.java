@@ -15,13 +15,13 @@ public class CostoEstadiaEntity
 	@Column(length = 10)
 	private int cos_id;
 	
-	@Column(name="cos_tipoMovil",length=5)
+	@Column(name="cos_tipo_movil",length=5)
 	private String cos_tipoMovil;
 	
-	@Column(name="cos_tipoPago",length=10)
+	@Column(name="cos_tipo_pago",length=10)
 	private String cos_tipoPago;
 	
-	@Column(name="cos_tiempoestadia",length=5)
+	@Column(name="cos_tiempo_estadia",length=5)
 	private String cos_tiempoestadia;
 	
 	@Column(name = "cos_valor", precision = 10, scale = 2)
@@ -78,9 +78,12 @@ public class CostoEstadiaEntity
 	}
 
 	@Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof CostoEstadiaEntity)) return false;
+    public boolean equals(Object o) 
+	{
+        if (this == o) 
+        	return true;
+        if (!(o instanceof CostoEstadiaEntity)) 
+        	return false;
         CostoEstadiaEntity that = (CostoEstadiaEntity) o;
         return Objects.equals(getCos_tipoMovil(), that.getCos_tipoMovil()) &&
                 Objects.equals(getCos_tipoPago(), that.getCos_tipoPago())&&

@@ -33,7 +33,7 @@ import co.com.ceiba.CeibaEstacionamiento.servicios.excepciones.SinEspacioExcepti
 import co.com.ceiba.CeibaEstacionamiento.testdatabuilder.FacturaTestDataBuilder;
 import co.com.ceiba.CeibaEstacionamiento.testdatabuilder.MovilTestDataBuilder;
 
-@AutoConfigureTestDatabase(replace=Replace.NONE)
+//@AutoConfigureTestDatabase(replace=Replace.NONE)
 @RunWith(SpringRunner.class)
 //@DataJpaTest
 public class FacturaTest 

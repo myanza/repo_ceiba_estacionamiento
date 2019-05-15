@@ -192,8 +192,8 @@ public class Estacionamiento
 		horasLapso = getHorasEntreFechas(factura);
 		List<Integer> valores = obtenerCantDiasHoras(horasLapso);
 		
-		horasCobrar = valores.get(0);
-		diasCobrar = valores.get(1);
+		diasCobrar = valores.get(0);
+		horasCobrar = valores.get(1);
 
 		String tipoMovil = factura.getMovil().getTipoMovil();
 		double cilindraje =  factura.getMovil().getCilindraje();

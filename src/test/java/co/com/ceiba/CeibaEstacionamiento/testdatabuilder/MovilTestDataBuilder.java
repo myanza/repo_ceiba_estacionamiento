@@ -39,4 +39,6 @@ public class MovilTestDataBuilder
 		movil.setTipoMovil(this.tipoMovil);
 		return movil;
 	}
+	
+	//public
 }

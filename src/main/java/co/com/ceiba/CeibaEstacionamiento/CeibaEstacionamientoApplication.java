@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@ComponentScan(basePackages={"co.com.ceiba.CeibaEstacionamiento.controller", 
+@ComponentScan(basePackages={"co.com.ceiba.CeibaEstacionamiento.controller",
+		"co.com.ceiba.CeibaEstacionamiento.dbconfiguracion",
 		"co.com.ceiba.CeibaEstacionamiento.dominio",
 		"co.com.ceiba.CeibaEstacionamiento.domini.dto",
 		"co.com.ceiba.CeibaEstacionamiento.persistencia.builders",

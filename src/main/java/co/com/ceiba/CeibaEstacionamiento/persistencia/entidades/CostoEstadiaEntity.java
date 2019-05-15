@@ -21,7 +21,7 @@ public class CostoEstadiaEntity
 	@Column(name="cos_tipo_pago",length=10)
 	private String cos_tipoPago;
 	
-	@Column(name="cos_tiempo_estadia",length=5)
+	@Column(name="cos_tiempo_estadia",length=10)
 	private String cos_tiempoestadia;
 	
 	@Column(name = "cos_valor", precision = 10, scale = 2)

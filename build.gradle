@@ -47,3 +47,23 @@ dependencies {
    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.25.0'
 	
 }
+
+def webappDir = "$projectDir/src/main/webapp"
+sourceSets {
+	main {
+		resources {
+			srcDirs = ["$webappDir/dist", "$projectDir/src/main/resources"]
+		}
+	}
+}
+
+test {
+	jacoco {
+		append = false
+		destinationFile = file("jacoco/jacocoTest.exec")
+	}
+	reports.junitXml.destination =  file("jacoco/test-results")
+}
+
+
+jacocoTestReport.dependsOn(test)

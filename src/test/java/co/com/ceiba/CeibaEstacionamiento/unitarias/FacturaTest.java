@@ -66,6 +66,8 @@ public class FacturaTest
 	public static final int UNA_HORA_MENOS = -1;
 	public static final int UN_DIA_MENOS = -24;
 	public static final int SIN_CILINDRAJE = -1;
+	public static final String MOTO = "MOTO";
+	public static final String CARRO = "CARRO";
 	
 	
 	private void inicializarCostosEstadias()
@@ -84,15 +86,15 @@ public class FacturaTest
 				String tipoPago = arguments[1].toString();
 				String tiempoEstadia = arguments[2].toString();
 				
-				if (tipoMovil == "CARRO" && tipoPago == "NORMAL" && tiempoEstadia == "HORA")
+				if (tipoMovil == CARRO && tipoPago == "NORMAL" && tiempoEstadia == "HORA")
 					valor = VALOR_HORA_CARRO;
-				else if(tipoMovil == "MOTO" && tipoPago == "NORMAL" && tiempoEstadia == "HORA")
+				else if(tipoMovil == MOTO && tipoPago == "NORMAL" && tiempoEstadia == "HORA")
 					valor = VALOR_HORA_MOTO;
-				else if(tipoMovil == "CARRO" && tipoPago == "NORMAL" && tiempoEstadia == "DIA")
+				else if(tipoMovil == CARRO && tipoPago == "NORMAL" && tiempoEstadia == "DIA")
 					valor = VALOR_DIA_CARRO;
-				else if(tipoMovil == "MOTO" && tipoPago == "NORMAL" && tiempoEstadia == "DIA")
+				else if(tipoMovil == MOTO && tipoPago == "NORMAL" && tiempoEstadia == "DIA")
 					valor = VALOR_DIA_MOTO;
-				else if(tipoMovil == "MOTO" && tipoPago == "EXTENDIDO" && tiempoEstadia == "NO_APLICA")
+				else if(tipoMovil == MOTO && tipoPago == "EXTENDIDO" && tiempoEstadia == "NO_APLICA")
 					valor = VALOR_MOTO_EXTENDIDO;
 				return valor;
 			}
@@ -136,7 +138,7 @@ public class FacturaTest
 	{
 		// arrange
 		MovilTestDataBuilder movilTestDataBuilder = new MovilTestDataBuilder();
-		Movil carro = movilTestDataBuilder.withPlaca("FGH-123").withCilindraje(-1).withTipoMovil("CARRO").build();
+		Movil carro = movilTestDataBuilder.withPlaca("FGH-123").withCilindraje(-1).withTipoMovil(CARRO).build();
 
 		boolean resultado = estacionamiento.registrarMovil(carro);
 
@@ -147,7 +149,7 @@ public class FacturaTest
 	public void registroMotoExitosoTest() 
 	{
 		MovilTestDataBuilder movilTestDataBuilder = new MovilTestDataBuilder();
-		Movil moto = movilTestDataBuilder.withPlaca("QWE-678").withCilindraje(250).withTipoMovil("MOTO").build();
+		Movil moto = movilTestDataBuilder.withPlaca("QWE-678").withCilindraje(250).withTipoMovil(MOTO).build();
 
 		boolean resultado = estacionamiento.registrarMovil(moto);
 
@@ -158,7 +160,7 @@ public class FacturaTest
 	public void noHayEspacioParaCarroTest() 
 	{
 		MovilTestDataBuilder movilTestDataBuilder = new MovilTestDataBuilder();
-		Movil carro = movilTestDataBuilder.withPlaca("FGH-123").withCilindraje(-1).withTipoMovil("CARRO").build();
+		Movil carro = movilTestDataBuilder.withPlaca("FGH-123").withCilindraje(-1).withTipoMovil(CARRO).build();
 		
 		Mockito.when(facturaServicio.getCantidadMovilesByTipo(Mockito.anyString())).thenReturn(CANTIDAD_MAXIMA_CARROS);
 
@@ -177,7 +179,7 @@ public class FacturaTest
 	public void noHayEspacioParaMotoTest() 
 	{
 		MovilTestDataBuilder movilTestDataBuilder = new MovilTestDataBuilder();
-		Movil moto = movilTestDataBuilder.withPlaca("FGH-123").withCilindraje(150).withTipoMovil("MOTO").build();
+		Movil moto = movilTestDataBuilder.withPlaca("FGH-123").withCilindraje(150).withTipoMovil(MOTO).build();
 		
 		Mockito.when(facturaServicio.getCantidadMovilesByTipo(Mockito.anyString())).thenReturn(CANTIDAD_MAXIMA_MOTOS);
 
@@ -196,7 +198,7 @@ public class FacturaTest
 	public void noIngresaEnDiaPermitidoTest() 
 	{
 		MovilTestDataBuilder movilTestDataBuilder = new MovilTestDataBuilder();
-		Movil carro = movilTestDataBuilder.withPlaca("AGH-123").withCilindraje(-1).withTipoMovil("MOTO").build();
+		Movil carro = movilTestDataBuilder.withPlaca("AGH-123").withCilindraje(-1).withTipoMovil(MOTO).build();
 		
 		Estacionamiento esta = Mockito.mock(Estacionamiento.class);
 		
@@ -217,7 +219,7 @@ public class FacturaTest
 	public void cobroHoraCarroTest() 
 	{
 		// arrange
-	    Movil movil = arrangeEliminarMovil("CARRO", "WRR-678", SIN_CILINDRAJE, UNA_HORA_MENOS);
+	    Movil movil = arrangeEliminarMovil(CARRO, "WRR-678", SIN_CILINDRAJE, UNA_HORA_MENOS);
 		// act
 		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
 		// assert
@@ -228,7 +230,7 @@ public class FacturaTest
 	public void cobroHoraMotoTest()
 	{
 		// arrange
-		Movil movil = arrangeEliminarMovil("MOTO", "BVN-123", 150, UNA_HORA_MENOS);		
+		Movil movil = arrangeEliminarMovil(MOTO, "BVN-123", 150, UNA_HORA_MENOS);		
 		// act
 		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
 		// assert
@@ -240,7 +242,7 @@ public class FacturaTest
 	public void cobroExtendidoMoto500Test() 
 	{
 		// arrange
-		Movil movil = arrangeEliminarMovil("MOTO", "TTY-678", 550, 0);	
+		Movil movil = arrangeEliminarMovil(MOTO, "TTY-678", 550, 0);	
 		// act
 		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
 		// assert
@@ -251,7 +253,7 @@ public class FacturaTest
 	public void cobroDiaCarroTest() 
 	{
 		// arrange
-	    Movil movil = arrangeEliminarMovil("CARRO", "HJG-345", SIN_CILINDRAJE, UN_DIA_MENOS);
+	    Movil movil = arrangeEliminarMovil(CARRO, "HJG-345", SIN_CILINDRAJE, UN_DIA_MENOS);
 		// act
 		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
 		// assert
@@ -262,7 +264,7 @@ public class FacturaTest
 	public void cobroDiaMotoTest() 
 	{
 		// arrange
-	    Movil movil = arrangeEliminarMovil("MOTO", "KJL-670", 200, UN_DIA_MENOS);
+	    Movil movil = arrangeEliminarMovil(MOTO, "KJL-670", 200, UN_DIA_MENOS);
 		// act
 		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
 		// assert
@@ -275,7 +277,7 @@ public class FacturaTest
 		// arrange
 		int undiatreshorasMenos = -27;
 		int valor_esperado = 11000;
-	    Movil movil = arrangeEliminarMovil("CARRO", "KJL-670", SIN_CILINDRAJE, undiatreshorasMenos);
+	    Movil movil = arrangeEliminarMovil(CARRO, "KJL-670", SIN_CILINDRAJE, undiatreshorasMenos);
 		// act
 		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
 		// assert
@@ -288,7 +290,7 @@ public class FacturaTest
 		// arrange
 		int diezhorasMenos = -10;
 		int valor_esperado = 6000;
-	    Movil movil = arrangeEliminarMovil("MOTO", "VBN-123", 650, diezhorasMenos);
+	    Movil movil = arrangeEliminarMovil(MOTO, "VBN-123", 650, diezhorasMenos);
 		// act
 		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
 		// assert

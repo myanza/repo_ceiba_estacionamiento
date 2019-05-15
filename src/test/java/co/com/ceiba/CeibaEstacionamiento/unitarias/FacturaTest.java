@@ -35,7 +35,7 @@ import co.com.ceiba.CeibaEstacionamiento.testdatabuilder.MovilTestDataBuilder;
 
 @AutoConfigureTestDatabase(replace=Replace.NONE)
 @RunWith(SpringRunner.class)
-@DataJpaTest
+//@DataJpaTest
 public class FacturaTest 
 {
 	//@Autowired

@@ -31,6 +31,9 @@ public class Estacionamiento
 	private static final int MILISEGUNDOS_POR_SEGUNDO = 1000;
 	private static final int SEGUNDOS_POR_HORA = 3600;
 	private static final int MAX_HORAS_COBRO_HORA = 9;
+	private static final int CILINDRAJE_VALOR_EXTENDIDO = 500;
+	private static final String CARRO = "CARRO";
+	private static final String MOTO = "MOTO";
 	
 	
 	public Estacionamiento(FacturaServicio facturaServicio, MovilServicio movilServicio, CostoEstadiaServicio costoEstadiaServicio)
@@ -42,9 +45,9 @@ public class Estacionamiento
 	
 	public void hayEspacioEstacionamiento(Movil movil)
 	{
-		if (movil.getTipoMovil() == "CARRO") 
+		if (movil.getTipoMovil() == CARRO) 
 		{
-			Integer cantCarrosEstacionamiento = this.facturaServicio.getCantidadMovilesByTipo("CARRO");
+			Integer cantCarrosEstacionamiento = this.facturaServicio.getCantidadMovilesByTipo(CARRO);
 			if (cantCarrosEstacionamiento >= CANTIDAD_MAXIMA_CARROS) 
 			{
 				throw new SinEspacioException(SIN_ESPACIO_ESTACIONAMIENTO);
@@ -52,7 +55,7 @@ public class Estacionamiento
 		} 
 		else 
 		{
-			Integer cantMotosEstacionamiento = this.facturaServicio.getCantidadMovilesByTipo("MOTO");
+			Integer cantMotosEstacionamiento = this.facturaServicio.getCantidadMovilesByTipo(MOTO);
 			if (cantMotosEstacionamiento >= CANTIDAD_MAXIMA_MOTOS) 
 			{
 				throw new SinEspacioException(SIN_ESPACIO_ESTACIONAMIENTO);
@@ -139,7 +142,7 @@ public class Estacionamiento
 	
 	public List<Integer> obtenerCantDiasHoras(int horasLapso)
 	{
-		List<Integer> valores = new ArrayList<Integer>();
+		List<Integer> valores = new ArrayList<>();
 		
 		int diasLapso = horasLapso / TOTAL_HORAS_DIA;
 		
@@ -153,7 +156,7 @@ public class Estacionamiento
 			valores.add(0, 1);
 			valores.add(1, 0);
 		}
-		else if(diasLapso > 1)
+		else if(diasLapso >= 1)
 		{
 			valores.add(0, diasLapso);
 			
@@ -173,20 +176,21 @@ public class Estacionamiento
 	{
 		double valorDia = costoEstadiaServicio.getCostoEstadiaBy(tipoMovil, "NORMAL", "DIA");
 		double valorHora = costoEstadiaServicio.getCostoEstadiaBy(tipoMovil, "NORMAL", "HORA");
-		double valorCobrar = (int) (diasCobrar*valorDia + horasCobrar*valorHora + calcularValorExtendido(tipoMovil, cilindraje));
-		return valorCobrar;
+		return (int) (diasCobrar*valorDia + horasCobrar*valorHora + calcularValorExtendido(tipoMovil, cilindraje));
 	}
 	
 	public double calcularValorExtendido(String tipoMovil, double cilindraje)
 	{
-		if(tipoMovil == "MOTO" && cilindraje > 500)
-			return costoEstadiaServicio.getCostoEstadiaBy(tipoMovil, "EXTENDIDO", null);
+		if(tipoMovil == MOTO && cilindraje > CILINDRAJE_VALOR_EXTENDIDO)
+			return costoEstadiaServicio.getCostoEstadiaBy(tipoMovil, "EXTENDIDO", "NO_APLICA");
 		return 0;
 	}
 	
 	public double obtenerValorFactura(Factura factura)
 	{
-		int horasCobrar = -1, diasCobrar = -1, horasLapso = -1;
+		int horasCobrar;
+		int diasCobrar;
+		int horasLapso;
 		double valorCobrar = 0;
 		
 		horasLapso = getHorasEntreFechas(factura);
@@ -198,10 +202,10 @@ public class Estacionamiento
 		String tipoMovil = factura.getMovil().getTipoMovil();
 		double cilindraje =  factura.getMovil().getCilindraje();
 		
-		if(tipoMovil == "CARRO")
-			valorCobrar = calcularValorFactura("CARRO", horasCobrar, diasCobrar, cilindraje);
-		else if(tipoMovil == "MOTO")
-			valorCobrar = calcularValorFactura("MOTO", horasCobrar, diasCobrar, cilindraje);
+		if(tipoMovil == CARRO)
+			valorCobrar = calcularValorFactura(CARRO, horasCobrar, diasCobrar, cilindraje);
+		else if(tipoMovil == MOTO)
+			valorCobrar = calcularValorFactura(MOTO, horasCobrar, diasCobrar, cilindraje);
 		
 		return valorCobrar;
 	}

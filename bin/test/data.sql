@@ -2,4 +2,4 @@ MERGE INTO `costoestadia` (`cos_tipo_movil`,`cos_tipo_pago`,`cos_tiempo_estadia`
 MERGE INTO `costoestadia` (`cos_tipo_movil`,`cos_tipo_pago`,`cos_tiempo_estadia`,`cos_valor`) KEY(`cos_tipo_movil`,`cos_tipo_pago`,`cos_tiempo_estadia`) VALUES ('CARRO','NORMAL','HORA',1000.00);
 MERGE INTO `costoestadia` (`cos_tipo_movil`,`cos_tipo_pago`,`cos_tiempo_estadia`,`cos_valor`) KEY(`cos_tipo_movil`,`cos_tipo_pago`,`cos_tiempo_estadia`) VALUES ('MOTO','NORMAL','DIA',4000.00);
 MERGE INTO `costoestadia` (`cos_tipo_movil`,`cos_tipo_pago`,`cos_tiempo_estadia`,`cos_valor`) KEY(`cos_tipo_movil`,`cos_tipo_pago`,`cos_tiempo_estadia`) VALUES ('MOTO','NORMAL','HORA',500.00);
-MERGE INTO `costoestadia` (`cos_tipo_movil`,`cos_tipo_pago`,`cos_valor`) KEY(`cos_tipo_movil`,`cos_tipo_pago`) VALUES ('MOTO','EXTENDIDO',2000.00);
+MERGE INTO `costoestadia` (`cos_tipo_movil`,`cos_tipo_pago`,`cos_tiempo_estadia`,`cos_valor`) KEY(`cos_tipo_movil`,`cos_tipo_pago`,`cos_tiempo_estadia`) VALUES ('MOTO','EXTENDIDO','NO_APLICA',2000.00);

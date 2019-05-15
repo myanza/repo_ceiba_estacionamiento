@@ -55,14 +55,17 @@ public class FacturaTest
 	public static final int CANTIDAD_MAXIMA_CARROS = 20;
 	public static final int CANTIDAD_MAXIMA_MOTOS = 10;
 	private static final double VALOR_HORA_CARRO = 1000;
-	private static final double VALOR_DIA_CARRO = 8000;
 	private static final double VALOR_HORA_MOTO = 500;
+	private static final double VALOR_DIA_CARRO = 8000;
 	private static final double VALOR_DIA_MOTO = 4000;
 	private static final double VALOR_MOTO_EXTENDIDO = 2000;
 	public static final String SIN_ESPACIO_ESTACIONAMIENTO = "El estacionamiento no cuenta con espacio disponible.";
 	public static final String SIN_AUTORIZACION_INGRESO = "No esta autorizado a ingresar.";
 	public static final String MOVIL_REGISTRADO = "Este movil ya se encuentra en el estacionamiento.";
 	public static final int MOVIL_ENCONTRADO = 1;
+	public static final int UNA_HORA_MENOS = -1;
+	public static final int UN_DIA_MENOS = -24;
+	public static final int SIN_CILINDRAJE = -1;
 	
 	
 	private void inicializarCostosEstadias()
@@ -89,7 +92,7 @@ public class FacturaTest
 					valor = VALOR_DIA_CARRO;
 				else if(tipoMovil == "MOTO" && tipoPago == "NORMAL" && tiempoEstadia == "DIA")
 					valor = VALOR_DIA_MOTO;
-				else if(tipoMovil == "MOTO" && tipoPago == "EXTENDIDO")
+				else if(tipoMovil == "MOTO" && tipoPago == "EXTENDIDO" && tiempoEstadia == "NO_APLICA")
 					valor = VALOR_MOTO_EXTENDIDO;
 				return valor;
 			}
@@ -113,7 +116,7 @@ public class FacturaTest
 		Movil movil = Mockito.mock(Movil.class);
 		
 		movilServicio = Mockito.mock(MovilServicioImpl.class);
-		Mockito.when(movilServicio.registrarMovil(Mockito.any())).thenReturn(true);
+		//Mockito.when(movilServicio.registrarMovil(Mockito.any())).thenReturn(true);
 		Mockito.when(movilServicio.getMovilByPlaca(Mockito.anyString())).thenReturn(movil);
 		//Mockito.when(movilServicio.getMovilByPlaca(Mockito.anyString())).thenReturn(null);
 	}
@@ -214,8 +217,89 @@ public class FacturaTest
 	public void cobroHoraCarroTest() 
 	{
 		// arrange
+	    Movil movil = arrangeEliminarMovil("CARRO", "WRR-678", SIN_CILINDRAJE, UNA_HORA_MENOS);
+		// act
+		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
+		// assert
+		Assert.assertEquals(VALOR_HORA_CARRO, factObtenida.getValor(), 0.0);
+	}
+	
+	@Test
+	public void cobroHoraMotoTest()
+	{
+		// arrange
+		Movil movil = arrangeEliminarMovil("MOTO", "BVN-123", 150, UNA_HORA_MENOS);		
+		// act
+		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
+		// assert
+		Assert.assertEquals(VALOR_HORA_MOTO, factObtenida.getValor(), 0.0);
+	}
+	
+	
+	@Test
+	public void cobroExtendidoMoto500Test() 
+	{
+		// arrange
+		Movil movil = arrangeEliminarMovil("MOTO", "TTY-678", 550, 0);	
+		// act
+		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
+		// assert
+		Assert.assertEquals(VALOR_MOTO_EXTENDIDO, factObtenida.getValor(), 0.0);
+	}
+	
+	@Test
+	public void cobroDiaCarroTest() 
+	{
+		// arrange
+	    Movil movil = arrangeEliminarMovil("CARRO", "HJG-345", SIN_CILINDRAJE, UN_DIA_MENOS);
+		// act
+		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
+		// assert
+		Assert.assertEquals(VALOR_DIA_CARRO, factObtenida.getValor(), 0.0);
+	}
+	
+	@Test
+	public void cobroDiaMotoTest() 
+	{
+		// arrange
+	    Movil movil = arrangeEliminarMovil("MOTO", "KJL-670", 200, UN_DIA_MENOS);
+		// act
+		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
+		// assert
+		Assert.assertEquals(VALOR_DIA_MOTO, factObtenida.getValor(), 0.0);
+	}
+	
+	@Test
+	public void cobroCarroUnDiaTresHorasTest() 
+	{
+		// arrange
+		int undiatreshorasMenos = -27;
+		int valor_esperado = 11000;
+	    Movil movil = arrangeEliminarMovil("CARRO", "KJL-670", SIN_CILINDRAJE, undiatreshorasMenos);
+		// act
+		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
+		// assert
+		Assert.assertEquals(valor_esperado, factObtenida.getValor(), 0.0);
+	}
+	
+	@Test
+	public void cobroMotoDiezHoras650CCTest() 
+	{
+		// arrange
+		int diezhorasMenos = -10;
+		int valor_esperado = 6000;
+	    Movil movil = arrangeEliminarMovil("MOTO", "VBN-123", 650, diezhorasMenos);
+		// act
+		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
+		// assert
+		Assert.assertEquals(valor_esperado, factObtenida.getValor(), 0.0);
+	}
+	
+	private Movil arrangeEliminarMovil(String tipoMovil, String placa, double cilindraje, int tiempoLapso)
+	{
+		// arrange
 		MovilTestDataBuilder movilTestDataBuilder = new MovilTestDataBuilder();
-		Movil movil = movilTestDataBuilder.withTipoMovil("CARRO").withPlaca("WRR-678").withCilindraje(-1).build();
+		Movil movil = movilTestDataBuilder.withTipoMovil(tipoMovil).withPlaca(placa).withCilindraje(cilindraje).build();
 		
 		FacturaTestDataBuilder facturaTestDataBuilder = new FacturaTestDataBuilder();
 		
@@ -223,7 +307,7 @@ public class FacturaTest
 		
 		Calendar calendar = Calendar.getInstance();
 	    calendar.setTime(fecha);
-	    calendar.add(Calendar.HOUR_OF_DAY, -1);
+	    calendar.add(Calendar.HOUR_OF_DAY, tiempoLapso);
 	    fecha = calendar.getTime();
 	    
 		Factura factura = facturaTestDataBuilder.withFechaIngreso(fecha).withMovil(movil).build();
@@ -243,9 +327,7 @@ public class FacturaTest
 			}
 		});
 		
-		// act
-		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
-		// assert
-		Assert.assertEquals(VALOR_HORA_CARRO, factObtenida.getValor(), 0.0);
+		return movil;
 	}
+	
 }

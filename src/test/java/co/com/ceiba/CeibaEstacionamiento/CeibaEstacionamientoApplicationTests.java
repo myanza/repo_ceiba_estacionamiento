@@ -1,4 +1,4 @@
-package co.com.ceiba.CeibaEstacionamiento;
+package co.com.ceiba.ceibaestacionamiento;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -17,7 +17,7 @@ import co.com.ceiba.ceibaestacionamiento.dbconfiguracion.H2JpaConfig;
 @ActiveProfiles("test")
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { CeibaestacionamientoApplication.class, H2JpaConfig.class })
-public class CeibaEstacionamientoApplicationTests 
+public class CeibaestacionamientoApplicationTests 
 {
 	@Test
 	public void whenValidName_thenEmployeeShouldBeFound()

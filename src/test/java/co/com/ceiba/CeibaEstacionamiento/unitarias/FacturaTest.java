@@ -1,4 +1,4 @@
-package co.com.ceiba.CeibaEstacionamiento.unitarias;
+package co.com.ceiba.ceibaestacionamiento.unitarias;
 
 import static org.junit.Assert.fail;
 
@@ -14,8 +14,8 @@ import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import co.com.ceiba.CeibaEstacionamiento.testdatabuilder.FacturaTestDataBuilder;
-import co.com.ceiba.CeibaEstacionamiento.testdatabuilder.MovilTestDataBuilder;
+import co.com.ceiba.ceibaestacionamiento.testdatabuilder.FacturaTestDataBuilder;
+import co.com.ceiba.ceibaestacionamiento.testdatabuilder.MovilTestDataBuilder;
 import co.com.ceiba.ceibaestacionamiento.dominio.Estacionamiento;
 import co.com.ceiba.ceibaestacionamiento.dominio.Factura;
 import co.com.ceiba.ceibaestacionamiento.dominio.Movil;

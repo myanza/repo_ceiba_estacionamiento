@@ -1,4 +1,4 @@
-package co.com.ceiba.CeibaEstacionamiento.testdatabuilder;
+package co.com.ceiba.ceibaestacionamiento.testdatabuilder;
 
 import java.util.Date;
 

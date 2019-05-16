@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.*;
 
 @Repository
-public interface CostoEstadiaRepositorio extends CrudRepository<CostoEstadiaEntity, Integer> 
+public interface CostoEstadiaRepositorioData extends CrudRepository<CostoEstadiaEntity, Integer> 
 {
 	@Query(value = "SELECT * FROM costoestadia WHERE cos_tipo_movil = :tipoMovil AND cos_tipo_pago = :tipoPago AND cos_tiempo_estadia = :tiempoEstadia", nativeQuery = true)
-	public Optional<CostoEstadiaEntity> findBy(String tipoMovil, String tipoPago, String tiempoEstadia);
+	Optional<CostoEstadiaEntity> findBy(String tipoMovil, String tipoPago, String tiempoEstadia);
 }

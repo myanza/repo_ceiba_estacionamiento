@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.*;
 
 @Repository
-public interface MovilRepositorio extends CrudRepository<MovilEntity, String>{
+public interface MovilRepositorioData extends CrudRepository<MovilEntity, String>{
 
 }

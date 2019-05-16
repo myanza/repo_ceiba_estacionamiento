@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.*;
 
 @Repository
-public interface FacturaRepositorio extends CrudRepository<FacturaEntity, Integer> 
+public interface FacturaRepositorioData extends CrudRepository<FacturaEntity, Integer> 
 {	
 	@Query(value = "SELECT * FROM factura WHERE fac_fecha_salida IS NULL", nativeQuery = true)
 	public List<FacturaEntity> getListadoMovilesEstacionamiento();

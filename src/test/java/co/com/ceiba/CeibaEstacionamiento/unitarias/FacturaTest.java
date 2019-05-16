@@ -1,6 +1,8 @@
 package co.com.ceiba.ceibaestacionamiento.unitarias;
 
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -131,10 +133,14 @@ public class FacturaTest
 		// arrange
 		MovilTestDataBuilder movilTestDataBuilder = new MovilTestDataBuilder();
 		Movil carro = movilTestDataBuilder.withPlaca("FGH-123").withCilindraje(-1).withTipoMovil(CARRO).build();
-
+		
+		//Estacionamiento spyEstacionamiento = Mockito.spy(estacionamiento);
+		
 		boolean resultado = estacionamiento.registrarMovil(carro);
 
 		Assert.assertTrue("No se pudo registrar el carro.", resultado);
+		
+		//verify(spyEstacionamiento, times(1)).registrarMovil(carro);
 	}
 	
 	@Test

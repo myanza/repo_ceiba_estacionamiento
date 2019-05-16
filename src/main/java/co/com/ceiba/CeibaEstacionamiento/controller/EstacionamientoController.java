@@ -1,4 +1,4 @@
-package co.com.ceiba.CeibaEstacionamiento.controller;
+package co.com.ceiba.ceibaestacionamiento.controller;
 
 import java.util.List;
 
@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import co.com.ceiba.ceibaestacionamiento.dominio.dto.FacturaDTO;
+import co.com.ceiba.ceibaestacionamiento.dominio.dto.MovilDTO;
+import co.com.ceiba.ceibaestacionamiento.dominio.servicios.CostoEstadiaServicio;
+import co.com.ceiba.ceibaestacionamiento.dominio.servicios.FacturaServicio;
+import co.com.ceiba.ceibaestacionamiento.dominio.servicios.MovilServicio;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
-
-import co.com.ceiba.CeibaEstacionamiento.dominio.dto.FacturaDTO;
-import co.com.ceiba.CeibaEstacionamiento.dominio.dto.MovilDTO;
-import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.CostoEstadiaServicio;
-import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.FacturaServicio;
-import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.MovilServicio;
-import co.com.ceiba.CeibaEstacionamiento.servicios.*;
 
 @RestController
 @RequestMapping("/estacionamiento")

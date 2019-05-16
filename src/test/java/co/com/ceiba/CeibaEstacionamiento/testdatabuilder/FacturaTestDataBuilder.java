@@ -2,8 +2,8 @@ package co.com.ceiba.CeibaEstacionamiento.testdatabuilder;
 
 import java.util.Date;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.Factura;
-import co.com.ceiba.CeibaEstacionamiento.dominio.Movil;
+import co.com.ceiba.ceibaestacionamiento.dominio.Factura;
+import co.com.ceiba.ceibaestacionamiento.dominio.Movil;
 
 public class FacturaTestDataBuilder 
 {

@@ -1,10 +1,9 @@
-package co.com.ceiba.CeibaEstacionamiento.persistencia.entidades;
+package co.com.ceiba.ceibaestacionamiento.persistencia.entidades;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,7 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -24,16 +22,16 @@ public class FacturaEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int fac_id;
+	private int facId;
 
 	@Column(name = "fac_fecha_ingreso")
-	private Date fac_fecha_ingreso;
+	private Date facFechaIngreso;
 
 	@Column(name = "fac_fecha_salida", nullable = true)
-	private Date fac_fecha_salida;
+	private Date facFechaSalida;
 
 	@Column(name = "fac_valor", nullable = true, precision = 10, scale = 2)
-	private double fac_valor;
+	private double facValor;
 
 	@ManyToOne
 	@JoinColumn(name = "mov_placa")
@@ -41,35 +39,35 @@ public class FacturaEntity {
 	private MovilEntity movil;
 
 	public int getFacId() {
-		return fac_id;
+		return facId;
 	}
 
-	public void setFacId(int fac_id) {
-		this.fac_id = fac_id;
+	public void setFacId(int facId) {
+		this.facId = facId;
 	}
 
 	public Date getFacFechaIngreso() {
-		return fac_fecha_ingreso;
+		return facFechaIngreso;
 	}
 
-	public void setFacFechaIngreso(Date fac_fechaIngreso) {
-		this.fac_fecha_ingreso = fac_fechaIngreso;
+	public void setFacFechaIngreso(Date facFechaIngreso) {
+		this.facFechaIngreso = facFechaIngreso;
 	}
 
 	public Date getFacFechaSalida() {
-		return fac_fecha_salida;
+		return facFechaSalida;
 	}
 
-	public void setFacFechaSalida(Date fac_fechaSalida) {
-		this.fac_fecha_salida = fac_fechaSalida;
+	public void setFacFechaSalida(Date facFechaSalida) {
+		this.facFechaSalida = facFechaSalida;
 	}
 
 	public double getFacValor() {
-		return fac_valor;
+		return facValor;
 	}
 
-	public void setFacValor(double fac_valor) {
-		this.fac_valor = fac_valor;
+	public void setFacValor(double facValor) {
+		this.facValor = facValor;
 	}
 
 	public MovilEntity getMovil() {

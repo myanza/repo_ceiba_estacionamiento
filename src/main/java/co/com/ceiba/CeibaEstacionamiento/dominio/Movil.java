@@ -1,4 +1,4 @@
-package co.com.ceiba.CeibaEstacionamiento.dominio;
+package co.com.ceiba.ceibaestacionamiento.dominio;
 
 public class Movil 
 {
@@ -6,7 +6,9 @@ public class Movil
 	private double cilindraje;
 	private String tipoMovil;
 	
-	public Movil() {}
+	public Movil() {
+		//Constructor sin atributos
+	}
 	
 	public Movil(String placa, double cilindraje, String tipoMovil) 
 	{

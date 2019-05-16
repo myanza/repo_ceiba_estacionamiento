@@ -1,4 +1,4 @@
-package co.com.ceiba.CeibaEstacionamiento.persistencia.repositorio;
+package co.com.ceiba.ceibaestacionamiento.persistencia.repositorio;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import co.com.ceiba.CeibaEstacionamiento.persistencia.entidades.*;
+import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.*;
 
 @Repository
 public interface FacturaRepositorio extends CrudRepository<FacturaEntity, Integer> 

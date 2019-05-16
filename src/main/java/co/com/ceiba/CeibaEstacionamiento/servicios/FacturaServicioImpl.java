@@ -1,4 +1,4 @@
-package co.com.ceiba.CeibaEstacionamiento.servicios;
+package co.com.ceiba.ceibaestacionamiento.servicios;
 
 import java.util.Date;
 import java.util.List;
@@ -8,18 +8,18 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.Estacionamiento;
-import co.com.ceiba.CeibaEstacionamiento.dominio.Factura;
-import co.com.ceiba.CeibaEstacionamiento.dominio.Movil;
-import co.com.ceiba.CeibaEstacionamiento.dominio.dto.FacturaDTO;
-import co.com.ceiba.CeibaEstacionamiento.dominio.dto.MovilDTO;
-import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.CostoEstadiaServicio;
-import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.FacturaServicio;
-import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.MovilServicio;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.builders.FacturaBuilder;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.builders.FacturaDTOBuilder;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.entidades.FacturaEntity;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.repositorio.FacturaRepositorio;
+import co.com.ceiba.ceibaestacionamiento.dominio.Estacionamiento;
+import co.com.ceiba.ceibaestacionamiento.dominio.Factura;
+import co.com.ceiba.ceibaestacionamiento.dominio.Movil;
+import co.com.ceiba.ceibaestacionamiento.dominio.dto.FacturaDTO;
+import co.com.ceiba.ceibaestacionamiento.dominio.dto.MovilDTO;
+import co.com.ceiba.ceibaestacionamiento.dominio.servicios.CostoEstadiaServicio;
+import co.com.ceiba.ceibaestacionamiento.dominio.servicios.FacturaServicio;
+import co.com.ceiba.ceibaestacionamiento.dominio.servicios.MovilServicio;
+import co.com.ceiba.ceibaestacionamiento.persistencia.builders.FacturaBuilder;
+import co.com.ceiba.ceibaestacionamiento.persistencia.builders.FacturaDTOBuilder;
+import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.FacturaEntity;
+import co.com.ceiba.ceibaestacionamiento.persistencia.repositorio.FacturaRepositorio;
 
 @Service
 public class FacturaServicioImpl implements FacturaServicio
@@ -33,8 +33,7 @@ public class FacturaServicioImpl implements FacturaServicio
 	{
 		FacturaDTOBuilder facturaDTOBuilder = new FacturaDTOBuilder();
 		List<FacturaEntity> facturasEntity = facturaRepositorio.getListadoMovilesEstacionamiento();
-		List<FacturaDTO> listadoFacturaDTO = facturasEntity.stream().map(facturaDTOBuilder::convertToDTO).collect(Collectors.toList());
-		return listadoFacturaDTO;
+		return facturasEntity.stream().map(facturaDTOBuilder::convertToDTO).collect(Collectors.toList());
 	}
 	
 	public Movil crearMovilDominio(MovilDTO movilDTO)

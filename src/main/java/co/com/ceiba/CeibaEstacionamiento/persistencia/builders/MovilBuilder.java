@@ -1,11 +1,13 @@
-package co.com.ceiba.CeibaEstacionamiento.persistencia.builders;
+package co.com.ceiba.ceibaestacionamiento.persistencia.builders;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.Movil;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.entidades.MovilEntity;
+import co.com.ceiba.ceibaestacionamiento.dominio.Movil;
+import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.MovilEntity;
 
 public class MovilBuilder 
 {
-	public MovilBuilder() {}
+	public MovilBuilder() {
+		//Constructor sin atributos
+	}
 	
 	public Movil convertirADominio(MovilEntity movilEntity) 
 	{

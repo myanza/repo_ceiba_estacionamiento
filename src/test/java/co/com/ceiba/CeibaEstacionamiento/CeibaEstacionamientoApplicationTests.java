@@ -9,14 +9,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplication;
-import co.com.ceiba.CeibaEstacionamiento.dbconfiguracion.H2JpaConfig;
+import co.com.ceiba.ceibaestacionamiento.CeibaestacionamientoApplication;
+import co.com.ceiba.ceibaestacionamiento.dbconfiguracion.H2JpaConfig;
 
 //@RunWith(SpringRunner.class)
 //@SpringBootTest
 @ActiveProfiles("test")
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { CeibaEstacionamientoApplication.class, H2JpaConfig.class })
+@SpringBootTest(classes = { CeibaestacionamientoApplication.class, H2JpaConfig.class })
 public class CeibaEstacionamientoApplicationTests 
 {
 	@Test

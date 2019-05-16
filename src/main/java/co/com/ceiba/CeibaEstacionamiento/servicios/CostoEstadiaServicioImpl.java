@@ -1,13 +1,13 @@
-package co.com.ceiba.CeibaEstacionamiento.servicios;
+package co.com.ceiba.ceibaestacionamiento.servicios;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.CostoEstadiaServicio;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.entidades.CostoEstadiaEntity;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.repositorio.CostoEstadiaRepositorio;
+import co.com.ceiba.ceibaestacionamiento.dominio.servicios.CostoEstadiaServicio;
+import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.CostoEstadiaEntity;
+import co.com.ceiba.ceibaestacionamiento.persistencia.repositorio.CostoEstadiaRepositorio;
 
 @Service
 public class CostoEstadiaServicioImpl implements CostoEstadiaServicio
@@ -20,7 +20,7 @@ public class CostoEstadiaServicioImpl implements CostoEstadiaServicio
 		Optional<CostoEstadiaEntity> costoEstadiaEntity = costoEstadiaRepositorio.findBy(tipoMovil, tipoPago, tiempoEstadia);
 		
 		if(costoEstadiaEntity.isPresent()) 
-			return costoEstadiaEntity.get().getCos_valor();
+			return costoEstadiaEntity.get().getCosValor();
 		else 
 			return 0;
 	}

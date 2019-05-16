@@ -1,4 +1,4 @@
-package co.com.ceiba.CeibaEstacionamiento.servicios.excepciones;
+package co.com.ceiba.ceibaestacionamiento.servicios.excepciones;
 
 public class MovilRegistradoException extends IllegalArgumentException 
 {

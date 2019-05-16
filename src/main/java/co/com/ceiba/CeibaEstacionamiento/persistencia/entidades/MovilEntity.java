@@ -1,5 +1,5 @@
 
-package co.com.ceiba.CeibaEstacionamiento.persistencia.entidades;
+package co.com.ceiba.ceibaestacionamiento.persistencia.entidades;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -7,13 +7,11 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity(name = "movil")
@@ -22,41 +20,41 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 public class MovilEntity {
 
 	@Id
-	@Column(length = 10)
-	private String mov_placa;
+	@Column(name="mov_placa", length = 10)
+	private String movPlaca;
 
 	@Column(name = "mov_cilindraje", nullable = true, precision = 10, scale = 2)
-	private double mov_cilindraje;
+	private double movCilindraje;
 
 	@Column(name = "mov_tipo_movil", nullable = true, length = 5)
-	private String mov_tipoMovil;
+	private String movTipoMovil;
 
 	@OneToMany(mappedBy = "movil", cascade = CascadeType.ALL)
 	//@JsonManagedReference
 	private Set<FacturaEntity> facturasEntity;
 
 	public String getMovPlaca() {
-		return mov_placa;
+		return movPlaca;
 	}
 
 	public void setMovPlaca(String placa) {
-		this.mov_placa = placa;
+		this.movPlaca = placa;
 	}
 
 	public double getMovCilindraje() {
-		return mov_cilindraje;
+		return movCilindraje;
 	}
 
 	public void setMovCilindraje(double cilindraje) {
-		this.mov_cilindraje = cilindraje;
+		this.movCilindraje = cilindraje;
 	}
 
 	public String getMovTipoMovil() {
-		return mov_tipoMovil;
+		return movTipoMovil;
 	}
 
 	public void setMovTipoMovil(String tipoVehiculo) {
-		this.mov_tipoMovil = tipoVehiculo;
+		this.movTipoMovil = tipoVehiculo;
 	}
 
 	public Set<FacturaEntity> getFacturasEntity() {

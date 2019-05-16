@@ -1,4 +1,4 @@
-package co.com.ceiba.CeibaEstacionamiento.dbconfiguracion;
+package co.com.ceiba.ceibaestacionamiento.dbconfiguracion;
 
 import java.util.Properties;
 
@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Profile("test")
 @Configuration
-@EnableJpaRepositories(basePackages = { "co.com.ceiba.CeibaEstacionamiento.persistencia.repositorio" })
+@EnableJpaRepositories(basePackages = { "co.com.ceiba.ceibaestacionamiento.persistencia.repositorio" })
 @PropertySource("classpath:application-test.properties")
 @EnableTransactionManagement
 public class H2JpaConfig 
@@ -43,7 +43,7 @@ public class H2JpaConfig
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("co.com.ceiba.CeibaEstacionamiento.persistencia.entidades");
+        em.setPackagesToScan("co.com.ceiba.ceibaestacionamiento.persistencia.entidades");
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         em.setJpaProperties(additionalProperties());
         return em;

@@ -9,29 +9,21 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.Estacionamiento;
-import co.com.ceiba.CeibaEstacionamiento.dominio.Factura;
-import co.com.ceiba.CeibaEstacionamiento.dominio.Movil;
-import co.com.ceiba.CeibaEstacionamiento.servicios.CostoEstadiaServicioImpl;
-import co.com.ceiba.CeibaEstacionamiento.servicios.FacturaServicioImpl;
-import co.com.ceiba.CeibaEstacionamiento.servicios.MovilServicioImpl;
-import co.com.ceiba.CeibaEstacionamiento.servicios.excepciones.SinAutorizacionException;
-import co.com.ceiba.CeibaEstacionamiento.servicios.excepciones.SinEspacioException;
 import co.com.ceiba.CeibaEstacionamiento.testdatabuilder.FacturaTestDataBuilder;
 import co.com.ceiba.CeibaEstacionamiento.testdatabuilder.MovilTestDataBuilder;
+import co.com.ceiba.ceibaestacionamiento.dominio.Estacionamiento;
+import co.com.ceiba.ceibaestacionamiento.dominio.Factura;
+import co.com.ceiba.ceibaestacionamiento.dominio.Movil;
+import co.com.ceiba.ceibaestacionamiento.servicios.CostoEstadiaServicioImpl;
+import co.com.ceiba.ceibaestacionamiento.servicios.FacturaServicioImpl;
+import co.com.ceiba.ceibaestacionamiento.servicios.MovilServicioImpl;
+import co.com.ceiba.ceibaestacionamiento.servicios.excepciones.SinAutorizacionException;
+import co.com.ceiba.ceibaestacionamiento.servicios.excepciones.SinEspacioException;
 
 //@AutoConfigureTestDatabase(replace=Replace.NONE)
 @RunWith(SpringRunner.class)

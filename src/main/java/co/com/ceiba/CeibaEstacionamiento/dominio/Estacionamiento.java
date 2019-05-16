@@ -1,17 +1,17 @@
-package co.com.ceiba.CeibaEstacionamiento.dominio;
+package co.com.ceiba.ceibaestacionamiento.dominio;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.CostoEstadiaServicio;
-import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.FacturaServicio;
-import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.MovilServicio;
-import co.com.ceiba.CeibaEstacionamiento.servicios.excepciones.MovilNoRegistradoException;
-import co.com.ceiba.CeibaEstacionamiento.servicios.excepciones.MovilRegistradoException;
-import co.com.ceiba.CeibaEstacionamiento.servicios.excepciones.SinAutorizacionException;
-import co.com.ceiba.CeibaEstacionamiento.servicios.excepciones.SinEspacioException;
+import co.com.ceiba.ceibaestacionamiento.dominio.servicios.CostoEstadiaServicio;
+import co.com.ceiba.ceibaestacionamiento.dominio.servicios.FacturaServicio;
+import co.com.ceiba.ceibaestacionamiento.dominio.servicios.MovilServicio;
+import co.com.ceiba.ceibaestacionamiento.servicios.excepciones.MovilNoRegistradoException;
+import co.com.ceiba.ceibaestacionamiento.servicios.excepciones.MovilRegistradoException;
+import co.com.ceiba.ceibaestacionamiento.servicios.excepciones.SinAutorizacionException;
+import co.com.ceiba.ceibaestacionamiento.servicios.excepciones.SinEspacioException;
 
 public class Estacionamiento 
 {

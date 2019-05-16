@@ -1,6 +1,6 @@
 package co.com.ceiba.CeibaEstacionamiento.testdatabuilder;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.dto.MovilDTO;
+import co.com.ceiba.ceibaestacionamiento.dominio.dto.MovilDTO;
 
 public class MovilDTOTestDataBuilder 
 {

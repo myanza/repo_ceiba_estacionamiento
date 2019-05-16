@@ -1,6 +1,6 @@
 package co.com.ceiba.CeibaEstacionamiento.testdatabuilder;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.Movil;
+import co.com.ceiba.ceibaestacionamiento.dominio.Movil;
 
 public class MovilTestDataBuilder 
 {
@@ -10,7 +10,7 @@ public class MovilTestDataBuilder
 	
 	public MovilTestDataBuilder()
 	{
-		
+		//Constructor sin atributos
 	}
 
 	public MovilTestDataBuilder withPlaca(String placa) 
@@ -39,6 +39,4 @@ public class MovilTestDataBuilder
 		movil.setTipoMovil(this.tipoMovil);
 		return movil;
 	}
-	
-	//public
 }

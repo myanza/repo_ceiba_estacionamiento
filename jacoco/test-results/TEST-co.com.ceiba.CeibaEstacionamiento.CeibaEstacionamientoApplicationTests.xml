@@ -1,108 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2019-05-15T21:17:16" hostname="NANCY-YANZA" time="0.002">
+<testsuite name="co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-05-15T21:51:12" hostname="NANCY-YANZA" time="0.162">
   <properties/>
-  <testcase name="whenValidName_thenEmployeeShouldBeFound" classname="co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests" time="0.002">
-    <failure message="java.lang.IllegalStateException: Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [co.com.ceiba.CeibaEstacionamiento.dbconfiguracion.H2JpaConfig]; nested exception is java.io.FileNotFoundException: class path resource [application-test.properties] cannot be opened because it does not exist
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
-	... 49 more
-Caused by: java.io.FileNotFoundException: class path resource [application-test.properties] cannot be opened because it does not exist
-	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:180)
-	at org.springframework.core.io.support.EncodedResource.getInputStream(EncodedResource.java:159)
-	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:99)
-	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:73)
-	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:59)
-	at org.springframework.core.io.support.ResourcePropertySource.&lt;init&gt;(ResourcePropertySource.java:67)
-	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:37)
-	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:452)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:271)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
-	... 61 more
-</failure>
-  </testcase>
-  <system-out><![CDATA[16:17:13.777 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
-16:17:13.803 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-16:17:13.843 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-16:17:13.922 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-16:17:13.954 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests], using SpringBootContextLoader
-16:17:13.962 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]: class path resource [co/com/ceiba/CeibaEstacionamiento/CeibaEstacionamientoApplicationTests-context.xml] does not exist
-16:17:13.963 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]: class path resource [co/com/ceiba/CeibaEstacionamiento/CeibaEstacionamientoApplicationTestsContext.groovy] does not exist
-16:17:13.963 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-16:17:14.371 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]: using defaults.
-16:17:14.372 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-16:17:14.408 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@a72b42, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@84ffad7, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@15ef78d5, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@18cdc71e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2109127e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5667ddca, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@38202e03, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4e23eb2e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@27508a76, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4fb18adb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@76d8e518, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@27730a76]
-16:17:14.413 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
-16:17:14.414 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
-16:17:14.415 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
-16:17:14.416 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
-16:17:14.427 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@553591c3 testClass = CeibaEstacionamientoApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@32e16594 testClass = CeibaEstacionamientoApplicationTests, locations = '{}', classes = '{class co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplication, class co.com.ceiba.CeibaEstacionamiento.dbconfiguracion.H2JpaConfig, class co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplication, class co.com.ceiba.CeibaEstacionamiento.dbconfiguracion.H2JpaConfig}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2c072b37, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@391c8b4, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3fc75f89, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1c1a3eed], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
-16:17:14.429 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
-16:17:14.429 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
-16:17:14.516 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+  <testcase name="whenValidName_thenEmployeeShouldBeFound" classname="co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests" time="0.162"/>
+  <system-out><![CDATA[16:51:02.321 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
+16:51:02.340 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:51:02.365 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:51:02.417 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:51:02.447 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests], using SpringBootContextLoader
+16:51:02.455 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]: class path resource [co/com/ceiba/CeibaEstacionamiento/CeibaEstacionamientoApplicationTests-context.xml] does not exist
+16:51:02.456 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]: class path resource [co/com/ceiba/CeibaEstacionamiento/CeibaEstacionamientoApplicationTestsContext.groovy] does not exist
+16:51:02.456 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:51:02.848 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]: using defaults.
+16:51:02.850 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+16:51:02.894 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@c3d4094, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@508598ee, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7c0728a8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@68811ba9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@edecfcd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@72e06410, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3767408c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@575b599a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2f03441b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5eb2650f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@535c2d75, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5ec6290d]
+16:51:02.899 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
+16:51:02.900 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
+16:51:02.902 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
+16:51:02.902 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
+16:51:02.909 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@33b214c9 testClass = CeibaEstacionamientoApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@1ce9ec73 testClass = CeibaEstacionamientoApplicationTests, locations = '{}', classes = '{class co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplication, class co.com.ceiba.CeibaEstacionamiento.dbconfiguracion.H2JpaConfig, class co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplication, class co.com.ceiba.CeibaEstacionamiento.dbconfiguracion.H2JpaConfig}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4ae7cbd9, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3f487386, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@61b5cfc2, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6c612557], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+16:51:02.911 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
+16:51:02.911 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests]
+16:51:02.975 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -112,172 +30,153 @@ Caused by: java.io.FileNotFoundException: class path resource [application-test.
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.1.4.RELEASE)
 
-2019-05-15 16:17:15.393  INFO 14828 --- [    Test worker] c.C.CeibaEstacionamientoApplicationTests : Starting CeibaEstacionamientoApplicationTests on NANCY-YANZA with PID 14828 (started by nancy.yanza in D:\Workspace spring tool suite\Repositorio-Ceiba-Estacionamiento\repo_ceiba_estacionamiento\Ceiba-Estacionamiento)
-2019-05-15 16:17:15.395  INFO 14828 --- [    Test worker] c.C.CeibaEstacionamientoApplicationTests : The following profiles are active: test
-2019-05-15 16:17:15.913  WARN 14828 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [co.com.ceiba.CeibaEstacionamiento.dbconfiguracion.H2JpaConfig]; nested exception is java.io.FileNotFoundException: class path resource [application-test.properties] cannot be opened because it does not exist
-2019-05-15 16:17:16.534 ERROR 14828 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [co.com.ceiba.CeibaEstacionamiento.dbconfiguracion.H2JpaConfig]; nested exception is java.io.FileNotFoundException: class path resource [application-test.properties] cannot be opened because it does not exist
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) [spring-boot-test-2.1.4.RELEASE.jar:2.1.4.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) [gradle-testing-jvm-5.4.1.jar:5.4.1]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) [gradle-testing-jvm-5.4.1.jar:5.4.1]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) [gradle-testing-jvm-5.4.1.jar:5.4.1]
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) [gradle-testing-jvm-5.4.1.jar:5.4.1]
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) [gradle-testing-base-5.4.1.jar:5.4.1]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_212]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_212]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_212]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_212]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) [gradle-messaging-5.4.1.jar:5.4.1]
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) [na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118) [gradle-testing-base-5.4.1.jar:5.4.1]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_212]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_212]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_212]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_212]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) [gradle-base-services-5.4.1.jar:5.4.1]
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) [gradle-base-services-5.4.1.jar:5.4.1]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_212]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_212]
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) [gradle-base-services-5.4.1.jar:5.4.1]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_212]
-Caused by: java.io.FileNotFoundException: class path resource [application-test.properties] cannot be opened because it does not exist
-	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:180) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.EncodedResource.getInputStream(EncodedResource.java:159) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:99) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:73) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:59) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:67) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:37) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:452) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:271) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	... 61 common frames omitted
-
-2019-05-15 16:17:16.547 ERROR 14828 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@a72b42] to prepare test instance [co.com.ceiba.CeibaEstacionamiento.CeibaEstacionamientoApplicationTests@369283a3]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) [gradle-testing-jvm-5.4.1.jar:5.4.1]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) [gradle-testing-jvm-5.4.1.jar:5.4.1]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) [gradle-testing-jvm-5.4.1.jar:5.4.1]
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) [gradle-testing-jvm-5.4.1.jar:5.4.1]
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) [gradle-testing-base-5.4.1.jar:5.4.1]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_212]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_212]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_212]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_212]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) [gradle-messaging-5.4.1.jar:5.4.1]
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) [na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118) [gradle-testing-base-5.4.1.jar:5.4.1]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_212]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_212]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_212]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_212]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) [gradle-messaging-5.4.1.jar:5.4.1]
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) [gradle-base-services-5.4.1.jar:5.4.1]
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) [gradle-base-services-5.4.1.jar:5.4.1]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_212]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_212]
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) [gradle-base-services-5.4.1.jar:5.4.1]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_212]
-Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [co.com.ceiba.CeibaEstacionamiento.dbconfiguracion.H2JpaConfig]; nested exception is java.io.FileNotFoundException: class path resource [application-test.properties] cannot be opened because it does not exist
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) ~[spring-boot-test-2.1.4.RELEASE.jar:2.1.4.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	... 49 common frames omitted
-Caused by: java.io.FileNotFoundException: class path resource [application-test.properties] cannot be opened because it does not exist
-	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:180) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.EncodedResource.getInputStream(EncodedResource.java:159) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:99) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:73) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:59) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:67) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:37) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:452) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:271) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
-	... 61 common frames omitted
-
+2019-05-15 16:51:03.681  INFO 13164 --- [    Test worker] c.C.CeibaEstacionamientoApplicationTests : Starting CeibaEstacionamientoApplicationTests on NANCY-YANZA with PID 13164 (started by nancy.yanza in D:\Workspace spring tool suite\Repositorio-Ceiba-Estacionamiento\repo_ceiba_estacionamiento\Ceiba-Estacionamiento)
+2019-05-15 16:51:03.683  INFO 13164 --- [    Test worker] c.C.CeibaEstacionamientoApplicationTests : The following profiles are active: test
+2019-05-15 16:51:05.254  INFO 13164 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-15 16:51:05.416  INFO 13164 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135ms. Found 3 repository interfaces.
+2019-05-15 16:51:06.859  INFO 13164 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$89f06fba] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-15 16:51:07.199  INFO 13164 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-15 16:51:07.361  INFO 13164 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-05-15 16:51:07.364  INFO 13164 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-05-15 16:51:07.683  INFO 13164 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-05-15 16:51:07.734 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BooleanType@22c76d4a
+2019-05-15 16:51:07.735 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BooleanType@22c76d4a
+2019-05-15 16:51:07.736 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@22c76d4a
+2019-05-15 16:51:07.738 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@7deb60af
+2019-05-15 16:51:07.739 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration true_false -> org.hibernate.type.TrueFalseType@278b71ee
+2019-05-15 16:51:07.741 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration yes_no -> org.hibernate.type.YesNoType@7d43742a
+2019-05-15 16:51:07.743 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.ByteType@25fa7855
+2019-05-15 16:51:07.744 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.ByteType@25fa7855
+2019-05-15 16:51:07.744 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@25fa7855
+2019-05-15 16:51:07.747 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration character -> org.hibernate.type.CharacterType@2801468e
+2019-05-15 16:51:07.748 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration char -> org.hibernate.type.CharacterType@2801468e
+2019-05-15 16:51:07.748 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@2801468e
+2019-05-15 16:51:07.751 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.ShortType@4999f7a2
+2019-05-15 16:51:07.752 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.ShortType@4999f7a2
+2019-05-15 16:51:07.752 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Short -> org.hibernate.type.ShortType@4999f7a2
+2019-05-15 16:51:07.755 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration integer -> org.hibernate.type.IntegerType@215f5d5a
+2019-05-15 16:51:07.755 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration int -> org.hibernate.type.IntegerType@215f5d5a
+2019-05-15 16:51:07.755 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@215f5d5a
+2019-05-15 16:51:07.758 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.LongType@5d9a845a
+2019-05-15 16:51:07.758 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.LongType@5d9a845a
+2019-05-15 16:51:07.759 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Long -> org.hibernate.type.LongType@5d9a845a
+2019-05-15 16:51:07.762 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.FloatType@2e87f2dd
+2019-05-15 16:51:07.762 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.FloatType@2e87f2dd
+2019-05-15 16:51:07.762 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Float -> org.hibernate.type.FloatType@2e87f2dd
+2019-05-15 16:51:07.765 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.DoubleType@60104dd
+2019-05-15 16:51:07.766 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.DoubleType@60104dd
+2019-05-15 16:51:07.767 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@60104dd
+2019-05-15 16:51:07.769 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@4ece06e8
+2019-05-15 16:51:07.770 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@4ece06e8
+2019-05-15 16:51:07.772 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_integer -> org.hibernate.type.BigIntegerType@528d630b
+2019-05-15 16:51:07.773 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@528d630b
+2019-05-15 16:51:07.775 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration string -> org.hibernate.type.StringType@5f8109a2
+2019-05-15 16:51:07.775 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.String -> org.hibernate.type.StringType@5f8109a2
+2019-05-15 16:51:07.776 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration nstring -> org.hibernate.type.StringNVarcharType@481bce8d
+2019-05-15 16:51:07.778 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@4cb8d583
+2019-05-15 16:51:07.780 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration url -> org.hibernate.type.UrlType@1118726d
+2019-05-15 16:51:07.780 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.net.URL -> org.hibernate.type.UrlType@1118726d
+2019-05-15 16:51:07.782 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> org.hibernate.type.DurationType@4c158bba
+2019-05-15 16:51:07.783 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> org.hibernate.type.DurationType@4c158bba
+2019-05-15 16:51:07.785 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Instant -> org.hibernate.type.InstantType@4b6bb2b0
+2019-05-15 16:51:07.786 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Instant -> org.hibernate.type.InstantType@4b6bb2b0
+2019-05-15 16:51:07.788 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@23b5a623
+2019-05-15 16:51:07.789 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@23b5a623
+2019-05-15 16:51:07.791 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDate -> org.hibernate.type.LocalDateType@ea200e0
+2019-05-15 16:51:07.792 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@ea200e0
+2019-05-15 16:51:07.794 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@44469938
+2019-05-15 16:51:07.795 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@44469938
+2019-05-15 16:51:07.798 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@132526b1
+2019-05-15 16:51:07.798 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@132526b1
+2019-05-15 16:51:07.801 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@627be62e
+2019-05-15 16:51:07.802 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@627be62e
+2019-05-15 16:51:07.807 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@5eeb65ce
+2019-05-15 16:51:07.808 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@5eeb65ce
+2019-05-15 16:51:07.811 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration date -> org.hibernate.type.DateType@3eaadcf8
+2019-05-15 16:51:07.812 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Date -> org.hibernate.type.DateType@3eaadcf8
+2019-05-15 16:51:07.815 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration time -> org.hibernate.type.TimeType@2eac7581
+2019-05-15 16:51:07.815 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Time -> org.hibernate.type.TimeType@2eac7581
+2019-05-15 16:51:07.819 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration timestamp -> org.hibernate.type.TimestampType@7d4cd4d3
+2019-05-15 16:51:07.819 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@7d4cd4d3
+2019-05-15 16:51:07.820 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Date -> org.hibernate.type.TimestampType@7d4cd4d3
+2019-05-15 16:51:07.823 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@7b764b08
+2019-05-15 16:51:07.826 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar -> org.hibernate.type.CalendarType@3a8e76e9
+2019-05-15 16:51:07.826 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@3a8e76e9
+2019-05-15 16:51:07.827 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@3a8e76e9
+2019-05-15 16:51:07.829 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@45b9f899
+2019-05-15 16:51:07.832 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration locale -> org.hibernate.type.LocaleType@2989353d
+2019-05-15 16:51:07.832 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@2989353d
+2019-05-15 16:51:07.834 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration currency -> org.hibernate.type.CurrencyType@3e71616f
+2019-05-15 16:51:07.834 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@3e71616f
+2019-05-15 16:51:07.836 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration timezone -> org.hibernate.type.TimeZoneType@48cd73bb
+2019-05-15 16:51:07.837 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@48cd73bb
+2019-05-15 16:51:07.838 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration class -> org.hibernate.type.ClassType@73e98fd2
+2019-05-15 16:51:07.839 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Class -> org.hibernate.type.ClassType@73e98fd2
+2019-05-15 16:51:07.841 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@78cad937
+2019-05-15 16:51:07.841 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@78cad937
+2019-05-15 16:51:07.842 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@3cf28415
+2019-05-15 16:51:07.846 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary -> org.hibernate.type.BinaryType@d16cf3
+2019-05-15 16:51:07.847 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte[] -> org.hibernate.type.BinaryType@d16cf3
+2019-05-15 16:51:07.848 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration [B -> org.hibernate.type.BinaryType@d16cf3
+2019-05-15 16:51:07.852 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@7244656b
+2019-05-15 16:51:07.852 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@7244656b
+2019-05-15 16:51:07.853 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@7244656b
+2019-05-15 16:51:07.855 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration row_version -> org.hibernate.type.RowVersionType@4279b724
+2019-05-15 16:51:07.857 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration image -> org.hibernate.type.ImageType@4a467d77
+2019-05-15 16:51:07.861 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration characters -> org.hibernate.type.CharArrayType@6efb40
+2019-05-15 16:51:07.863 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration char[] -> org.hibernate.type.CharArrayType@6efb40
+2019-05-15 16:51:07.866 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration [C -> org.hibernate.type.CharArrayType@6efb40
+2019-05-15 16:51:07.871 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@5661187a
+2019-05-15 16:51:07.872 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@5661187a
+2019-05-15 16:51:07.874 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@5661187a
+2019-05-15 16:51:07.876 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration text -> org.hibernate.type.TextType@36ca0621
+2019-05-15 16:51:07.877 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ntext -> org.hibernate.type.NTextType@4ca4ab39
+2019-05-15 16:51:07.882 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration blob -> org.hibernate.type.BlobType@17a1be60
+2019-05-15 16:51:07.884 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@17a1be60
+2019-05-15 16:51:07.888 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@2b6b8c7c
+2019-05-15 16:51:07.893 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration clob -> org.hibernate.type.ClobType@634b146
+2019-05-15 16:51:07.893 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@634b146
+2019-05-15 16:51:07.898 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration nclob -> org.hibernate.type.NClobType@4a6ecb4f
+2019-05-15 16:51:07.899 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@4a6ecb4f
+2019-05-15 16:51:07.900 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@12023293
+2019-05-15 16:51:07.903 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@5f48f235
+2019-05-15 16:51:07.906 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration serializable -> org.hibernate.type.SerializableType@6e03a450
+2019-05-15 16:51:07.913 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration object -> org.hibernate.type.ObjectType@543c5913
+2019-05-15 16:51:07.915 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@543c5913
+2019-05-15 16:51:07.917 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@5d83ad0f
+2019-05-15 16:51:07.918 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@1994ebd7
+2019-05-15 16:51:07.919 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@39aea95c
+2019-05-15 16:51:07.919 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@5e25fff1
+2019-05-15 16:51:07.919 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@1e0ecaef
+2019-05-15 16:51:07.920 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@20fa40aa
+2019-05-15 16:51:07.920 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@6cd2f9a0
+2019-05-15 16:51:07.921 DEBUG 13164 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@1d7959bc
+2019-05-15 16:51:08.433  INFO 13164 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-05-15 16:51:08.547 DEBUG 13164 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@371e9d31] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@392471c7]
+2019-05-15 16:51:09.035 DEBUG 13164 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@371e9d31] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@2e876da2]
+2019-05-15 16:51:09.368  INFO 13164 --- [    Test worker] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: co.com.ceiba.CeibaEstacionamiento.persistencia.entidades.CostoEstadiaEntity (class must be instantiated by Interceptor)
+2019-05-15 16:51:09.612 DEBUG 13164 --- [    Test worker] org.hibernate.SQL                        : drop table costoestadia if exists
+Hibernate: drop table costoestadia if exists
+2019-05-15 16:51:09.614 DEBUG 13164 --- [    Test worker] org.hibernate.SQL                        : drop table factura if exists
+Hibernate: drop table factura if exists
+2019-05-15 16:51:09.614 DEBUG 13164 --- [    Test worker] org.hibernate.SQL                        : drop table movil if exists
+Hibernate: drop table movil if exists
+2019-05-15 16:51:09.619 DEBUG 13164 --- [    Test worker] org.hibernate.SQL                        : create table costoestadia (cos_id integer not null, cos_tiempo_estadia varchar(10), cos_tipo_movil varchar(5), cos_tipo_pago varchar(10), cos_valor double, primary key (cos_id))
+Hibernate: create table costoestadia (cos_id integer not null, cos_tiempo_estadia varchar(10), cos_tipo_movil varchar(5), cos_tipo_pago varchar(10), cos_valor double, primary key (cos_id))
+2019-05-15 16:51:09.800 DEBUG 13164 --- [    Test worker] org.hibernate.SQL                        : create table factura (fac_id integer generated by default as identity, fac_fecha_ingreso timestamp, fac_fecha_salida timestamp, fac_valor double, mov_placa varchar(10), primary key (fac_id))
+Hibernate: create table factura (fac_id integer generated by default as identity, fac_fecha_ingreso timestamp, fac_fecha_salida timestamp, fac_valor double, mov_placa varchar(10), primary key (fac_id))
+2019-05-15 16:51:09.807 DEBUG 13164 --- [    Test worker] org.hibernate.SQL                        : create table movil (mov_placa varchar(10) not null, mov_cilindraje double, mov_tipo_movil varchar(5), primary key (mov_placa))
+Hibernate: create table movil (mov_placa varchar(10) not null, mov_cilindraje double, mov_tipo_movil varchar(5), primary key (mov_placa))
+2019-05-15 16:51:09.813 DEBUG 13164 --- [    Test worker] org.hibernate.SQL                        : alter table factura add constraint FK3tfeok1s0c0xs7n8ssxed33aj foreign key (mov_placa) references movil
+Hibernate: alter table factura add constraint FK3tfeok1s0c0xs7n8ssxed33aj foreign key (mov_placa) references movil
+2019-05-15 16:51:09.823  INFO 13164 --- [    Test worker] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@13111816'
+2019-05-15 16:51:09.831 TRACE 13164 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@2e876da2] for TypeConfiguration
+2019-05-15 16:51:09.834  INFO 13164 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-15 16:51:11.598  INFO 13164 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-15 16:51:11.701  WARN 13164 --- [    Test worker] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-15 16:51:12.213  INFO 13164 --- [    Test worker] c.C.CeibaEstacionamientoApplicationTests : Started CeibaEstacionamientoApplicationTests in 9.208 seconds (JVM running for 11.532)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

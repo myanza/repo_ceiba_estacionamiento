@@ -1,15 +1,17 @@
-package co.com.ceiba.CeibaEstacionamiento.persistencia.builders;
+package co.com.ceiba.ceibaestacionamiento.persistencia.builders;
 
 import java.util.Date;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.Factura;
-import co.com.ceiba.CeibaEstacionamiento.dominio.Movil;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.entidades.FacturaEntity;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.entidades.MovilEntity;
+import co.com.ceiba.ceibaestacionamiento.dominio.Factura;
+import co.com.ceiba.ceibaestacionamiento.dominio.Movil;
+import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.FacturaEntity;
+import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.MovilEntity;
 
 public class FacturaBuilder 
 {
-	public FacturaBuilder() {}
+	public FacturaBuilder() {
+		//Constructor sin atributos
+	}
 
 	public Factura convertirADominio(FacturaEntity facturaEntity) 
 	{

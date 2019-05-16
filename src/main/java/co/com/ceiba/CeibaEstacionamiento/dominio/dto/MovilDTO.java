@@ -1,4 +1,4 @@
-package co.com.ceiba.CeibaEstacionamiento.dominio.dto;
+package co.com.ceiba.ceibaestacionamiento.dominio.dto;
 
 public class MovilDTO 
 {

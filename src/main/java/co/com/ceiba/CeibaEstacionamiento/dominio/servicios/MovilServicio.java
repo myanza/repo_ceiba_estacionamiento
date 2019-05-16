@@ -1,6 +1,6 @@
-package co.com.ceiba.CeibaEstacionamiento.dominio.servicios;
+package co.com.ceiba.ceibaestacionamiento.dominio.servicios;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.Movil;
+import co.com.ceiba.ceibaestacionamiento.dominio.Movil;
 
 public interface MovilServicio 
 {

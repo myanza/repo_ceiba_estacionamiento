@@ -1,12 +1,11 @@
-package co.com.ceiba.CeibaEstacionamiento.dominio.servicios;
+package co.com.ceiba.ceibaestacionamiento.dominio.servicios;
 
 import java.util.List;
-import java.util.Map;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.Factura;
-import co.com.ceiba.CeibaEstacionamiento.dominio.Movil;
-import co.com.ceiba.CeibaEstacionamiento.dominio.dto.FacturaDTO;
-import co.com.ceiba.CeibaEstacionamiento.dominio.dto.MovilDTO;
+import co.com.ceiba.ceibaestacionamiento.dominio.Factura;
+import co.com.ceiba.ceibaestacionamiento.dominio.Movil;
+import co.com.ceiba.ceibaestacionamiento.dominio.dto.FacturaDTO;
+import co.com.ceiba.ceibaestacionamiento.dominio.dto.MovilDTO;
 
 public interface FacturaServicio 
 {

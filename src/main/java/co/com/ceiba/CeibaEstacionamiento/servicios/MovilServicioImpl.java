@@ -1,15 +1,15 @@
-package co.com.ceiba.CeibaEstacionamiento.servicios;
+package co.com.ceiba.ceibaestacionamiento.servicios;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import co.com.ceiba.CeibaEstacionamiento.dominio.Movil;
-import co.com.ceiba.CeibaEstacionamiento.dominio.servicios.MovilServicio;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.builders.MovilBuilder;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.entidades.MovilEntity;
-import co.com.ceiba.CeibaEstacionamiento.persistencia.repositorio.MovilRepositorio;
+import co.com.ceiba.ceibaestacionamiento.dominio.Movil;
+import co.com.ceiba.ceibaestacionamiento.dominio.servicios.MovilServicio;
+import co.com.ceiba.ceibaestacionamiento.persistencia.builders.MovilBuilder;
+import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.MovilEntity;
+import co.com.ceiba.ceibaestacionamiento.persistencia.repositorio.MovilRepositorio;
 
 @Service
 public class MovilServicioImpl implements MovilServicio

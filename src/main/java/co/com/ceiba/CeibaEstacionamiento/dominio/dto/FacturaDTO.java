@@ -1,74 +1,76 @@
-package co.com.ceiba.CeibaEstacionamiento.dominio.dto;
+package co.com.ceiba.ceibaestacionamiento.dominio.dto;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class FacturaDTO 
 {
-	private int fac_id;
-	private String fac_fechaIngreso;
-	private String fac_fechaSalida;
-	private double fac_valor;
-	private String mov_placa;
+	private int facId;
+	private String facFechaIngreso;
+	private String facFechaSalida;
+	private double facValor;
+	private String movPlaca;
 	private String tipoMovil;
 	private double cilindraje;
 	
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	
-	public FacturaDTO(){}
+	public FacturaDTO(){
+		//Constructor sin atributos
+	}
 
-	public FacturaDTO(int fac_id, String fac_fechaIngreso, String fac_fechaSalida, double fac_valor, String mov_placa,
+	public FacturaDTO(int facId, String facFechaIngreso, String facFechaSalida, double facValor, String movPlaca,
 			String tipoMovil, double cilindraje) 
 	{
-		this.fac_id = fac_id;
-		this.fac_fechaIngreso = fac_fechaIngreso;
-		this.fac_fechaSalida = fac_fechaSalida;
-		this.fac_valor = fac_valor;
-		this.mov_placa = mov_placa;
+		this.facId = facId;
+		this.facFechaIngreso = facFechaIngreso;
+		this.facFechaSalida = facFechaSalida;
+		this.facValor = facValor;
+		this.movPlaca = movPlaca;
 		this.tipoMovil = tipoMovil;
 		this.cilindraje = cilindraje;
 	}
 
-	public int getFac_id() {
-		return fac_id;
+	public int getFacId() {
+		return facId;
 	}
 
-	public void setFac_id(int fac_id) {
-		this.fac_id = fac_id;
+	public void setFacId(int facId) {
+		this.facId = facId;
 	}
 
-	public String getFac_fechaIngreso() {
-		return fac_fechaIngreso;
+	public String getFacFechaIngreso() {
+		return facFechaIngreso;
 	}
 
-	public void setFac_fechaIngreso(Date fac_fechaIngreso) {
-		this.fac_fechaIngreso = sdf.format(fac_fechaIngreso);
+	public void setFacFechaIngreso(Date facFechaIngreso) {
+		this.facFechaIngreso = sdf.format(facFechaIngreso);
 	}
 
-	public String getFac_fechaSalida() {
-		return fac_fechaSalida;
+	public String getFacFechaSalida() {
+		return facFechaSalida;
 	}
 
-	public void setFac_fechaSalida(Date fac_fechaSalida) {
-		if (fac_fechaSalida != null) {
-			this.fac_fechaSalida = sdf.format(fac_fechaSalida);
+	public void setFacFechaSalida(Date facFechaSalida) {
+		if (facFechaSalida != null) {
+			this.facFechaSalida = sdf.format(facFechaSalida);
 		}
 	}
 
-	public double getFac_valor() {
-		return fac_valor;
+	public double getFacValor() {
+		return facValor;
 	}
 
-	public void setFac_valor(double fac_valor) {
-		this.fac_valor = fac_valor;
+	public void setFacValor(double facValor) {
+		this.facValor = facValor;
 	}
 
-	public String getMov_placa() {
-		return mov_placa;
+	public String getMovPlaca() {
+		return movPlaca;
 	}
 
-	public void setMov_placa(String mov_placa) {
-		this.mov_placa = mov_placa;
+	public void setMovPlaca(String movPlaca) {
+		this.movPlaca = movPlaca;
 	}
 
 	public String getTipoMovil() {

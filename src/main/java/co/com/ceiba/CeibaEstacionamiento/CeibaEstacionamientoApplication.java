@@ -1,25 +1,25 @@
-package co.com.ceiba.CeibaEstacionamiento;
+package co.com.ceiba.ceibaestacionamiento;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@ComponentScan(basePackages={"co.com.ceiba.CeibaEstacionamiento.controller",
-		"co.com.ceiba.CeibaEstacionamiento.dbconfiguracion",
-		"co.com.ceiba.CeibaEstacionamiento.dominio",
-		"co.com.ceiba.CeibaEstacionamiento.domini.dto",
-		"co.com.ceiba.CeibaEstacionamiento.persistencia.builders",
-		"co.com.ceiba.CeibaEstacionamiento.persistencia.entidades",
-		"co.com.ceiba.CeibaEstacionamiento.persistencia.repositorio",
-		"co.com.ceiba.CeibaEstacionamiento.servicios",
-		"co.com.ceiba.CeibaEstacionamiento.servicios.excepciones"})
+@ComponentScan(basePackages={"co.com.ceiba.ceibaestacionamiento.controller",
+		"co.com.ceiba.ceibaestacionamiento.dbconfiguracion",
+		"co.com.ceiba.ceibaestacionamiento.dominio",
+		"co.com.ceiba.ceibaestacionamiento.dominio.dto",
+		"co.com.ceiba.ceibaestacionamiento.persistencia.builders",
+		"co.com.ceiba.ceibaestacionamiento.persistencia.entidades",
+		"co.com.ceiba.ceibaestacionamiento.persistencia.repositorio",
+		"co.com.ceiba.ceibaestacionamiento.servicios",
+		"co.com.ceiba.ceibaestacionamiento.servicios.excepciones"})
 @SpringBootApplication
-public class CeibaEstacionamientoApplication {
+public class CeibaestacionamientoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CeibaEstacionamientoApplication.class, args);
+		SpringApplication.run(CeibaestacionamientoApplication.class, args);
 	}
+	
+	
 
 }

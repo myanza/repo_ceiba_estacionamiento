@@ -1,6 +1,6 @@
 package co.com.ceiba.CeibaEstacionamiento.testdatabuilder;
 
-import co.com.ceiba.CeibaEstacionamiento.persistencia.entidades.MovilEntity;
+import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.MovilEntity;
 
 public class MovilEntityTestDataBuilder 
 {

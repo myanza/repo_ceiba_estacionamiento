@@ -1,4 +1,4 @@
-package co.com.ceiba.CeibaEstacionamiento.persistencia.entidades;
+package co.com.ceiba.ceibaestacionamiento.persistencia.entidades;
 
 import java.util.Objects;
 
@@ -12,69 +12,69 @@ import javax.persistence.Table;
 public class CostoEstadiaEntity
 {	
 	@Id
-	@Column(length = 10)
-	private int cos_id;
+	@Column(name="cos_id", length = 10)
+	private int cosId;
 	
 	@Column(name="cos_tipo_movil",length=5)
-	private String cos_tipoMovil;
+	private String cosTipoMovil;
 	
 	@Column(name="cos_tipo_pago",length=10)
-	private String cos_tipoPago;
+	private String cosTipoPago;
 	
 	@Column(name="cos_tiempo_estadia",length=10)
-	private String cos_tiempoestadia;
+	private String cosTiempoEstadia;
 	
 	@Column(name = "cos_valor", precision = 10, scale = 2)
-	private double cos_valor;
+	private double cosValor;
 
-	public CostoEstadiaEntity(int cos_id, String cos_tipoMovil, String cos_tipoPago, String cos_tiempoestadia,
-			double cos_valor) {
+	public CostoEstadiaEntity(int cosId, String cosTipoMovil, String cosTipoPago, String cosTiempoEstadia,
+			double cosValor) {
 		super();
-		this.cos_id = cos_id;
-		this.cos_tipoMovil = cos_tipoMovil;
-		this.cos_tipoPago = cos_tipoPago;
-		this.cos_tiempoestadia = cos_tiempoestadia;
-		this.cos_valor = cos_valor;
+		this.cosId = cosId;
+		this.cosTipoMovil = cosTipoMovil;
+		this.cosTipoPago = cosTipoPago;
+		this.cosTiempoEstadia = cosTiempoEstadia;
+		this.cosValor = cosValor;
 	}
 	
-	public int getCos_id() {
-		return cos_id;
+	public int getCosId() {
+		return cosId;
 	}
 
-	public void setCos_id(int cos_id) {
-		this.cos_id = cos_id;
+	public void setCosId(int cosId) {
+		this.cosId = cosId;
 	}
 
-	public String getCos_tipoMovil() {
-		return cos_tipoMovil;
+	public String getCosTipoMovil() {
+		return cosTipoMovil;
 	}
 
-	public void setCos_tipoMovil(String cos_tipoMovil) {
-		this.cos_tipoMovil = cos_tipoMovil;
+	public void setCosTipoMovil(String cosTipoMovil) {
+		this.cosTipoMovil = cosTipoMovil;
 	}
 
-	public String getCos_tipoPago() {
-		return cos_tipoPago;
+	public String getCosTipoPago() {
+		return cosTipoPago;
 	}
 
-	public void setCos_tipoPago(String cos_tipoPago) {
-		this.cos_tipoPago = cos_tipoPago;
+	public void setCosTipoPago(String cosTipoPago) {
+		this.cosTipoPago = cosTipoPago;
 	}
 
-	public String getCos_tiempoestadia() {
-		return cos_tiempoestadia;
+	public String getCosTiempoestadia() {
+		return cosTiempoEstadia;
 	}
 
-	public void setCos_tiempoestadia(String cos_tiempoestadia) {
-		this.cos_tiempoestadia = cos_tiempoestadia;
+	public void setCosTiempoEstadia(String cosTiempoEstadia) {
+		this.cosTiempoEstadia = cosTiempoEstadia;
 	}
 
-	public double getCos_valor() {
-		return cos_valor;
+	public double getCosValor() {
+		return cosValor;
 	}
 
-	public void setCos_valor(double cos_valor) {
-		this.cos_valor = cos_valor;
+	public void setCosValor(double cosValor) {
+		this.cosValor = cosValor;
 	}
 
 	@Override
@@ -85,15 +85,15 @@ public class CostoEstadiaEntity
         if (!(o instanceof CostoEstadiaEntity)) 
         	return false;
         CostoEstadiaEntity that = (CostoEstadiaEntity) o;
-        return Objects.equals(getCos_tipoMovil(), that.getCos_tipoMovil()) &&
-                Objects.equals(getCos_tipoPago(), that.getCos_tipoPago())&&
-                Objects.equals(getCos_valor(), that.getCos_valor())&&
-                Objects.equals(getCos_tiempoestadia(), that.getCos_tiempoestadia());
+        return Objects.equals(getCosTipoMovil(), that.getCosTipoMovil()) &&
+                Objects.equals(getCosTipoPago(), that.getCosTipoPago())&&
+                Objects.equals(getCosValor(), that.getCosValor())&&
+                Objects.equals(getCosTiempoestadia(), that.getCosTiempoestadia());
     }
 	
     @Override
     public int hashCode() {
-        return Objects.hash(getCos_tipoMovil(), getCos_tipoPago(), getCos_tiempoestadia(), getCos_valor());
+        return Objects.hash(getCosTipoMovil(), getCosTipoPago(), getCosTiempoestadia(), getCosValor());
     }
 }
 

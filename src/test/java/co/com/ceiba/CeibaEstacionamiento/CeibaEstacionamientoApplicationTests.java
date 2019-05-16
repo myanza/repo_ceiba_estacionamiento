@@ -17,7 +17,7 @@ import co.com.ceiba.ceibaestacionamiento.dbconfiguracion.H2JpaConfig;
 @ActiveProfiles("test")
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { CeibaEstacionamientoApplication.class, H2JpaConfig.class })
-public class CeibaestacionamientoApplicationTests 
+public class CeibaEstacionamientoApplicationTests 
 {
 	@Test
 	public void whenValidName_thenEmployeeShouldBeFound()

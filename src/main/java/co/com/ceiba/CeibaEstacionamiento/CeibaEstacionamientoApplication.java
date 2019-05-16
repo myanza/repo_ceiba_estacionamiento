@@ -14,10 +14,10 @@ import org.springframework.context.annotation.ComponentScan;
 		"co.com.ceiba.ceibaestacionamiento.servicios",
 		"co.com.ceiba.ceibaestacionamiento.servicios.excepciones"})
 @SpringBootApplication
-public class CeibaestacionamientoApplication {
+public class CeibaEstacionamientoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CeibaestacionamientoApplication.class, args);
+		SpringApplication.run(CeibaEstacionamientoApplication.class, args);
 	}
 
 }

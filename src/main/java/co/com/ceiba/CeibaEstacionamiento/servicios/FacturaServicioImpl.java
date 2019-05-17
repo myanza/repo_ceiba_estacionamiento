@@ -27,6 +27,12 @@ public class FacturaServicioImpl implements FacturaServicio
 	@Autowired
 	public FacturaRepositorio facturaRepositorio;
 	
+	@Autowired
+	public FacturaServicioImpl(FacturaRepositorio facturaRepositorio) 
+	{
+		this.facturaRepositorio = facturaRepositorio;
+	}
+	
 	@Override
 	public List<FacturaDTO> getListadoMovilesEstacionamiento()
 	{

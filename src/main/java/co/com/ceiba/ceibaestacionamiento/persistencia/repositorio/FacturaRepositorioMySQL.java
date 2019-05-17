@@ -15,6 +15,7 @@ import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.FacturaEntity;
 @Transactional
 public class FacturaRepositorioMySQL implements FacturaRepositorio
 {
+	@Autowired
 	FacturaRepositorioData facturaRepositorioData;
 	
 	@Autowired

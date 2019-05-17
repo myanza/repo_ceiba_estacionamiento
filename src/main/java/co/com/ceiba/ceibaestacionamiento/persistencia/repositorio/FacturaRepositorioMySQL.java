@@ -20,6 +20,11 @@ public class FacturaRepositorioMySQL implements FacturaRepositorio
 	@Qualifier(value="facturaRepositorioData")
 	FacturaRepositorioData facturaRepositorioData;
 	
+	public FacturaRepositorioMySQL(FacturaRepositorioData facturaRepositorioData) 
+	{
+		this.facturaRepositorioData = facturaRepositorioData;
+	}
+	
 	@Override
 	public FacturaEntity save(FacturaEntity facturaEntity)
 	{
@@ -48,5 +53,11 @@ public class FacturaRepositorioMySQL implements FacturaRepositorio
 	public Optional<FacturaEntity> getFacturaByPlaca(String placa)
 	{
 		return facturaRepositorioData.getFacturaByPlaca(placa);
+	}
+	
+	@Override
+	public int getCantMovilesEstacionamiento()
+	{
+		return facturaRepositorioData.getCantMovilesEstacionamiento();
 	}
 }

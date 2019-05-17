@@ -6,7 +6,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import co.com.ceiba.ceibaestacionamiento.dominio.Estacionamiento;
@@ -21,12 +20,18 @@ import co.com.ceiba.ceibaestacionamiento.dominio.servicios.MovilServicio;
 import co.com.ceiba.ceibaestacionamiento.persistencia.builders.FacturaBuilder;
 import co.com.ceiba.ceibaestacionamiento.persistencia.builders.FacturaDTOBuilder;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.FacturaEntity;
+import co.com.ceiba.ceibaestacionamiento.persistencia.repositorio.FacturaRepositorioMySQL;
 
 @Service
 public class FacturaServicioImpl implements FacturaServicio
 {
 	@Autowired
 	public FacturaRepositorio facturaRepositorio;
+	
+	public FacturaServicioImpl(FacturaRepositorioMySQL facturaRepositorio) 
+	{
+		this.facturaRepositorio = facturaRepositorio;
+	}
 
 	
 	@Override

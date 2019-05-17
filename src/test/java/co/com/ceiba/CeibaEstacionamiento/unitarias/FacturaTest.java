@@ -1,8 +1,6 @@
 package co.com.ceiba.ceibaestacionamiento.unitarias;
 
 import static org.junit.Assert.fail;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 
 import java.util.Calendar;
 import java.util.Date;

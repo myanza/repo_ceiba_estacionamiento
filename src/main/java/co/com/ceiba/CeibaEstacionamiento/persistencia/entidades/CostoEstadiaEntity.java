@@ -26,6 +26,10 @@ public class CostoEstadiaEntity
 	
 	@Column(name = "cos_valor", precision = 10, scale = 2)
 	private double cosValor;
+	
+	public CostoEstadiaEntity() {
+		//Constructor sin argumentos
+	}
 
 	public CostoEstadiaEntity(int cosId, String cosTipoMovil, String cosTipoPago, String cosTiempoEstadia,
 			double cosValor) {

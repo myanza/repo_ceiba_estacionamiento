@@ -16,4 +16,6 @@ public interface FacturaRepositorio
 	Integer getMovilEstacionamientoByPlaca(String placa);
 	
 	Optional<FacturaEntity> getFacturaByPlaca(String placa); 
+	
+	int getCantMovilesEstacionamiento();
 }	

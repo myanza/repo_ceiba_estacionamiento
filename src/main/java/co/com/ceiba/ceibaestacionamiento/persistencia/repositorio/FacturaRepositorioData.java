@@ -24,4 +24,7 @@ public interface FacturaRepositorioData extends CrudRepository<FacturaEntity, In
 	
 	@Query(value = "SELECT * FROM factura WHERE mov_placa = :placa AND fac_fecha_salida IS NULL", nativeQuery = true)
 	public Optional<FacturaEntity> getFacturaByPlaca(@Param("placa") String placa);
+	
+	@Query(value = "SELECT COUNT(*) FROM factura WHERE fac_fecha_salida IS NULL", nativeQuery = true)
+	public int getCantMovilesEstacionamiento();
 }

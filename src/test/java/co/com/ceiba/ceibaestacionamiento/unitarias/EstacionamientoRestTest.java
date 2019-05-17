@@ -13,6 +13,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.mockito.InjectMocks;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -38,6 +39,7 @@ import co.com.ceiba.ceibaestacionamiento.dominio.servicios.MovilServicio;
 import co.com.ceiba.ceibaestacionamiento.persistencia.builders.FacturaDTOBuilder;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.FacturaEntity;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.MovilEntity;
+import co.com.ceiba.ceibaestacionamiento.persistencia.repositorio.FacturaRepositorioMySQL;
 import co.com.ceiba.ceibaestacionamiento.servicios.FacturaServicioImpl;
 import co.com.ceiba.ceibaestacionamiento.testdatabuilder.FacturaEntityTestDataBuilder;
 import co.com.ceiba.ceibaestacionamiento.testdatabuilder.FacturaTestDataBuilder;
@@ -49,14 +51,17 @@ import co.com.ceiba.ceibaestacionamiento.testdatabuilder.MovilTestDataBuilder;
 @ContextConfiguration(classes = { CeibaEstacionamientoApplication.class,  FacturaRepositorio.class})
 @WebMvcTest(EstacionamientoController.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-//@ContextConfiguration(locations = {"classpath:/beans.xml", "/mvc-dispatcher-servlet.xml"})
 public class EstacionamientoRestTest 
 {
 	@Autowired
 	private MockMvc mockMVC;
 	
 	//@MockBean
-	private FacturaServicio facturaServicio;
+	//@InjectMocks
+	private FacturaServicioImpl facturaServicio;
+	
+	@Autowired
+	public FacturaRepositorioMySQL facturaRepositorio;
 	
 	@MockBean
 	private MovilServicio movilServicio;
@@ -69,7 +74,7 @@ public class EstacionamientoRestTest
 	private static final String MOTO = "MOTO";
 	
 	@Test
-	public void getListadoMovilesEstacionamiento() throws Exception 
+	public void primerGetListadoMovilesEstacionamiento() throws Exception 
 	{
 		MovilEntityTestDataBuilder movilEntityTestDataBuilder = new MovilEntityTestDataBuilder();
 		MovilEntity movilEntity = movilEntityTestDataBuilder.withPlaca("DFG-456").withCilindraje(SIN_CILINDRAJE).withTipoMovil(CARRO).build();
@@ -85,7 +90,9 @@ public class EstacionamientoRestTest
 		
 		//given(facturaServicio.getListadoMovilesEstacionamiento()).willReturn(facturasDTO);
 		
-		facturaServicio = Mockito.mock(FacturaServicioImpl.class);
+		//facturaServicio = Mockito.mock(FacturaServicioImpl.class);
+		
+		facturaServicio = new FacturaServicioImpl(facturaRepositorio);
 		
 		given(facturaServicio.getListadoMovilesEstacionamiento()).willReturn(facturasDTO);
 		
@@ -99,7 +106,7 @@ public class EstacionamientoRestTest
 	}
 	
 	@Test
-	public void registrarMovil() throws Exception
+	public void segundoRegistrarMovil() throws Exception
 	{
 		MovilDTOTestDataBuilder movilDTOTestDataBuilder = new MovilDTOTestDataBuilder();
 		MovilDTO movilDTO = movilDTOTestDataBuilder.withPlaca("DFG-345").withCilindraje(150).withTipoMovil(MOTO).build();
@@ -114,7 +121,7 @@ public class EstacionamientoRestTest
 	}
 	
 	@Test
-	public void eliminarMovil() throws Exception 
+	public void tercerEliminarMovil() throws Exception 
 	{
 		MovilTestDataBuilder movilTestDataBuilder = new MovilTestDataBuilder();
 		Movil carro = movilTestDataBuilder.withPlaca("TYU-567").build();

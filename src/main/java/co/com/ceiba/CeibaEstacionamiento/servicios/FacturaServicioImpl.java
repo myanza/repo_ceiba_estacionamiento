@@ -20,19 +20,12 @@ import co.com.ceiba.ceibaestacionamiento.dominio.servicios.MovilServicio;
 import co.com.ceiba.ceibaestacionamiento.persistencia.builders.FacturaBuilder;
 import co.com.ceiba.ceibaestacionamiento.persistencia.builders.FacturaDTOBuilder;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.FacturaEntity;
-import co.com.ceiba.ceibaestacionamiento.persistencia.repositorio.FacturaRepositorioMySQL;
 
 @Service
 public class FacturaServicioImpl implements FacturaServicio
 {
 	@Autowired
 	public FacturaRepositorio facturaRepositorio;
-	
-	public FacturaServicioImpl(FacturaRepositorioMySQL facturaRepositorio) 
-	{
-		this.facturaRepositorio = facturaRepositorio;
-	}
-
 	
 	@Override
 	public List<FacturaDTO> getListadoMovilesEstacionamiento()

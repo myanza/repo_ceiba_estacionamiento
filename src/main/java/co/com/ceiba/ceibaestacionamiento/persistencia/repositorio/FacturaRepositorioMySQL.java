@@ -6,7 +6,6 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import co.com.ceiba.ceibaestacionamiento.dominio.repositorio.FacturaRepositorio;
@@ -16,10 +15,9 @@ import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.FacturaEntity;
 @Transactional
 public class FacturaRepositorioMySQL implements FacturaRepositorio
 {
-	@Autowired
-	@Qualifier(value="facturaRepositorioData")
 	FacturaRepositorioData facturaRepositorioData;
 	
+	@Autowired
 	public FacturaRepositorioMySQL(FacturaRepositorioData facturaRepositorioData) 
 	{
 		this.facturaRepositorioData = facturaRepositorioData;

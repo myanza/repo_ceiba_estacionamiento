@@ -13,8 +13,6 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
-import org.mockito.InjectMocks;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -34,12 +32,10 @@ import co.com.ceiba.ceibaestacionamiento.dominio.dto.FacturaDTO;
 import co.com.ceiba.ceibaestacionamiento.dominio.dto.MovilDTO;
 import co.com.ceiba.ceibaestacionamiento.dominio.repositorio.FacturaRepositorio;
 import co.com.ceiba.ceibaestacionamiento.dominio.servicios.CostoEstadiaServicio;
-import co.com.ceiba.ceibaestacionamiento.dominio.servicios.FacturaServicio;
 import co.com.ceiba.ceibaestacionamiento.dominio.servicios.MovilServicio;
 import co.com.ceiba.ceibaestacionamiento.persistencia.builders.FacturaDTOBuilder;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.FacturaEntity;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.MovilEntity;
-import co.com.ceiba.ceibaestacionamiento.persistencia.repositorio.FacturaRepositorioMySQL;
 import co.com.ceiba.ceibaestacionamiento.servicios.FacturaServicioImpl;
 import co.com.ceiba.ceibaestacionamiento.testdatabuilder.FacturaEntityTestDataBuilder;
 import co.com.ceiba.ceibaestacionamiento.testdatabuilder.FacturaTestDataBuilder;
@@ -56,12 +52,8 @@ public class EstacionamientoRestTest
 	@Autowired
 	private MockMvc mockMVC;
 	
-	//@MockBean
-	//@InjectMocks
+	@MockBean
 	private FacturaServicioImpl facturaServicio;
-	
-	@Autowired
-	public FacturaRepositorioMySQL facturaRepositorio;
 	
 	@MockBean
 	private MovilServicio movilServicio;
@@ -87,12 +79,6 @@ public class EstacionamientoRestTest
 		FacturaDTO facturaDTO = facturaDTOBuilder.convertToDTO(facturaEntity);
 		
 		List<FacturaDTO> facturasDTO = Arrays.asList(facturaDTO);
-		
-		//given(facturaServicio.getListadoMovilesEstacionamiento()).willReturn(facturasDTO);
-		
-		//facturaServicio = Mockito.mock(FacturaServicioImpl.class);
-		
-		facturaServicio = new FacturaServicioImpl(facturaRepositorio);
 		
 		given(facturaServicio.getListadoMovilesEstacionamiento()).willReturn(facturasDTO);
 		

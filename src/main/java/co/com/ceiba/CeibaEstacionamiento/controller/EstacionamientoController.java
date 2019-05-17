@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @RestController
 @RequestMapping("/estacionamiento")
-@CrossOrigin(origins = "http://localhost:3306")
+@CrossOrigin(origins = "http://localhost:4200")
 
 public class EstacionamientoController 
 {

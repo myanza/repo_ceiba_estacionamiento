@@ -1,0 +1,12 @@
+<h2>Moviles</h2>
+
+<md-list>
+  <md-list-item *ngFor="let movil of moviles" (click)="getListadoMovilesEstacionamiento(movil)">
+    {{movil.model}}
+    <button md-raised-button (click)="eliminarMovil(movil); $event.stopPropagation()">Eliminar Movil</button>
+  </md-list-item>
+</md-list>
+
+<p>
+  listadomoviles works!
+</p>

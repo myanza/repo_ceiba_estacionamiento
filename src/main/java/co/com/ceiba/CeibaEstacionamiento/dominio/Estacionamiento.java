@@ -137,7 +137,13 @@ public class Estacionamiento
 		Date fechaSalida = factura.getFechaSalida();
 		
 		long secs = (fechaSalida.getTime() - fechaIngreso.getTime()) / MILISEGUNDOS_POR_SEGUNDO;
-		return (int) (secs/SEGUNDOS_POR_HORA);
+		int horas = (int) (secs/SEGUNDOS_POR_HORA);
+		int segRestantes = (int) (secs%SEGUNDOS_POR_HORA);
+		
+		if(segRestantes > 0){
+			++horas;
+		}
+		return horas;
 	}
 	
 	public List<Integer> obtenerCantDiasHoras(int horasLapso)
@@ -202,10 +208,14 @@ public class Estacionamiento
 		String tipoMovil = factura.getMovil().getTipoMovil();
 		double cilindraje =  factura.getMovil().getCilindraje();
 		
-		if(tipoMovil == CARRO)
+		if(tipoMovil.equals(CARRO))
+		{
 			valorCobrar = calcularValorFactura(CARRO, horasCobrar, diasCobrar, cilindraje);
-		else if(tipoMovil == MOTO)
+		}
+		else if(tipoMovil.equals(MOTO))
+		{
 			valorCobrar = calcularValorFactura(MOTO, horasCobrar, diasCobrar, cilindraje);
+		}
 		
 		return valorCobrar;
 	}

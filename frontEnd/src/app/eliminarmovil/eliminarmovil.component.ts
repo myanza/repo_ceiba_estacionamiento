@@ -39,24 +39,13 @@ export class EliminarmovilComponent implements OnInit
       console.log('placa = ' + this.placa);
       this.estacionamientoService.eliminarMovil(this.placa).subscribe((response) =>
       {
-        console.log('Valor = ' + response.facValor);
-
-        if(response.facValor)
-        {
-          console.log('entreee');
-        }
-        else
-        {
-          console.log('no entree');
-        }
-
         if(response.facValor)
         {
           this.dialog.open(MensajeComponent,
           {
             data: {
               titulo: 'Eliminación Exitosa',
-              texto: 'El vehículo de placa ' + this.placa + ' fue eliminado exitosamente. Valor total: ' + response.valor
+              texto: 'El vehículo de placa ' + this.placa + ' fue eliminado exitosamente. Valor total: $' + response.facValor + ' pesos.'
             }
           });
           console.log(response);

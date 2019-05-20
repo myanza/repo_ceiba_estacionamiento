@@ -36,7 +36,6 @@ export class EliminarmovilComponent implements OnInit
   {
     if (this.placa !== '')
     {
-      console.log('placa = ' + this.placa);
       this.estacionamientoService.eliminarMovil(this.placa).subscribe((response) =>
       {
         if(response.facValor)

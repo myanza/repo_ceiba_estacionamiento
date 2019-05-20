@@ -16,6 +16,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { RegistrarmovilComponent } from './registrarmovil/registrarmovil.component';
 import { MensajeComponent } from './mensaje/mensaje.component';
 import { EliminarmovilComponent } from './eliminarmovil/eliminarmovil.component';
+import { ConfirmareliminacionComponent } from './confirmareliminacion/confirmareliminacion.component';
 
 
 @NgModule({
@@ -24,10 +25,12 @@ import { EliminarmovilComponent } from './eliminarmovil/eliminarmovil.component'
     ListadomovilesComponent,
     RegistrarmovilComponent,
     MensajeComponent,
-    EliminarmovilComponent
+    EliminarmovilComponent,
+    ConfirmareliminacionComponent
   ],
   entryComponents: [
-    MensajeComponent
+    MensajeComponent,
+    ConfirmareliminacionComponent
   ],
   imports: [
     BrowserModule,

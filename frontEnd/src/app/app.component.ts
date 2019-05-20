@@ -12,19 +12,18 @@ export class AppComponent
 {
   title = 'Estacionamiento';
 
-  @ViewChild(ListadomovilesComponent) private listadoMoviles:
-  ListadomovilesComponent;
+  @ViewChild(ListadomovilesComponent) private listadoMoviles: ListadomovilesComponent;
 
-  @ViewChild(EliminarmovilComponent) private eliminarMovil:
-  EliminarmovilComponent;
+  @ViewChild(EliminarmovilComponent) private eliminarMovil: EliminarmovilComponent;
 
   public recargarListadoMoviles()
   {
     this.listadoMoviles.getListadoMoviles();
   }
 
-  public eliminarMovilEstacionamiento(factura: Factura)
+  public eliminarMovilEstacionamiento(factura)
   {
     this.eliminarMovil.cargarDatos(factura);
+    this.eliminarMovil.eliminarMovil();
   }
 }

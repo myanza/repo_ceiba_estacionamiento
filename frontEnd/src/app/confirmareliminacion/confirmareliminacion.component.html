@@ -1,0 +1,6 @@
+<h2 mat-dialog-title>{{data.titulo}}</h2>
+<mat-dialog-content class>Está seguro de eliminar el móvil de placa {{data.texto.movPlaca}}?</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button (click)="eliminarMovilEstacionamiento(data.texto)">Aceptar</button>
+  <button mat-raised-button (click)="cancelar()">Cancelar</button>
+</mat-dialog-actions>

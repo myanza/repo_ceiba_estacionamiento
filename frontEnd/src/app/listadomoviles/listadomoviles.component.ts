@@ -4,6 +4,8 @@ import {merge, Observable, of as observableOf} from 'rxjs';
 import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import { EstacionamientoService } from '../estacionamiento.service';
 import { Factura } from '../factura';
+import { ConfirmareliminacionComponent } from '../confirmareliminacion/confirmareliminacion.component';
+import {MatDialog, MatDialogRef} from '@angular/material';
 
 
 @Component({
@@ -20,7 +22,7 @@ export class ListadomovilesComponent implements OnInit
 
   @Output() public eliminar = new EventEmitter<Factura>();
 
-  constructor(private router: Router, private estacionamientoService: EstacionamientoService) {}
+  constructor(private router: Router, private dialog: MatDialog, private estacionamientoService: EstacionamientoService) {}
 
   ngAfterViewInit()
   {
@@ -49,9 +51,31 @@ export class ListadomovilesComponent implements OnInit
 
   ngOnInit() { }
 
-  eliminarMovil(factura)
+  /*eliminarMovil(factura)
   {
     this.eliminar.emit(factura);
+  }*/
+
+  eliminarMovil(factura)
+  {
+    let dialogref = this.dialog.open(ConfirmareliminacionComponent,
+    {
+      data:
+      {
+        titulo: 'Confirmar Eliminación Móvil',
+        texto: factura
+      }
+    });
+
+    dialogref.afterClosed().subscribe(result =>
+    {
+        if(result != null)
+        {
+          this.eliminar.emit(result);
+        }
+    });
+
+
   }
 
 }

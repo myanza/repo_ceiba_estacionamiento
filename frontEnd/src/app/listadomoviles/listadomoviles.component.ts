@@ -16,7 +16,7 @@ export class ListadomovilesComponent implements OnInit
   cargando = true;
   facturas: Factura[] = [];
 
-  listaColumnas = ['id', 'placa', 'tipoMovil', 'fechaIngreso', 'operaciones'];
+  listaColumnas = ['placa', 'tipoMovil', 'fechaIngreso', 'operaciones'];
 
   @Output() public eliminar = new EventEmitter<Factura>();
 
@@ -49,7 +49,7 @@ export class ListadomovilesComponent implements OnInit
 
   ngOnInit() { }
 
-  registrarSalida(factura: Factura)
+  eliminarMovil(factura)
   {
     this.eliminar.emit(factura);
   }

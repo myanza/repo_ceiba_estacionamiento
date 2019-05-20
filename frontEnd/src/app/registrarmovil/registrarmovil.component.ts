@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import {MatDialog, MatDialogRef} from '@angular/material';
 import { EstacionamientoService } from '../estacionamiento.service';
+import { MensajeComponent } from '../mensaje/mensaje.component';
+
 
 @Component({
   selector: 'app-registrarmovil',
@@ -17,60 +19,74 @@ export class RegistrarmovilComponent implements OnInit
 
   @Output() public recargar = new EventEmitter();
 
-  constructor(private dialog: MatDialog, private estacionamientoServicio: EstacionamientoService) { }
+  constructor(private mensaje: MatDialog, private estacionamientoServicio: EstacionamientoService) { }
 
   ngOnInit() {
   }
 
-  registrarMovil()
+  abrirMensaje(stitulo: string, stexto: string)
   {
-    if (!this.placa || this.placa === '')
+    this.mensaje.open(MensajeComponent,
     {
-      /*this.dialog.open(DialogoComponent,
+      data:
       {
-        data:
-        {
-          titulo: "Error al validar datos",
-          mensaje: "La placa del vehiculo es obligatoria."
-        }
-      });*/
-    }
-    else
-    {
-      var movil =
-      {
-        placa: this.placa,
-        tipoMovil: this.tipoMovil,
-        cilindraje: this.cilindraje >= 1 && this.tipoMovil === 'MOTO' ? this.cilindraje : 0
-      };
+        titulo: stitulo,
+        texto: stexto
+      }
+    });
+  }
 
-      this.estacionamientoServicio.registrarMovil(movil).subscribe((response) =>
-      {
-        /*this.dialog.open(DialogoComponent,
-        {
-          data: {
-            titulo: "Informacion",
-            mensaje: "Entrada registrada, para vehiculo con placa " + this.placa + "."
-          }
-        });*/
-       this.recargar.emit();
-        this.placa = '';
-        this.cilindraje = 1;
-        this.tipoMovil = '';
-        this.registrarmovilform.reset();
-      },
-      (error) =>
-      {
-        /*this.dialog.open(DialogoComponent,
-        {
-          data:
-          {
-            titulo: "Error",
-            mensaje: error.error.message
-          }
-        });*/
-      });
+  validarDatos()
+  {
+    if(!this.placa || this.placa === '')
+    {
+      const titulo = 'Datos inválidos.';
+      const texto =  'La placa del móvil es obligatoria.';
+      this.abrirMensaje(titulo, texto);
+    }
+    else if(!this.tipoMovil || this.tipoMovil === '')
+    {
+      const titulo = 'Datos inválidos.';
+      const texto =  'El tipo del móvil es obligatorio.';
+      this.abrirMensaje(titulo, texto);
     }
   }
 
+  registrarMovil()
+  {
+    this.validarDatos();
+
+    const movil =
+    {
+      placa: this.placa,
+      tipoMovil: this.tipoMovil,
+      cilindraje: this.cilindraje >= 1 && this.tipoMovil === 'MOTO' ? this.cilindraje : 0
+    };
+
+    this.estacionamientoServicio.registrarMovil(movil).subscribe((response) =>
+    {
+      this.mensaje.open(MensajeComponent, {
+        data: {
+          titulo: 'Registro Exitoso',
+          texto: 'El móvil de placa ' + this.placa + ' fue registrado existosamente.'
+        }
+      });
+
+      this.recargar.emit();
+      this.placa = '';
+      this.tipoMovil = '';
+      this.cilindraje = 1;
+      this.registrarmovilform.reset();
+    },
+    (error) =>
+    {
+      this.mensaje.open(MensajeComponent,
+      {
+        data: {
+          titulo: 'Error',
+          texto: error.error.message
+        }
+      });
+    });
+  }
 }

@@ -25,11 +25,6 @@
 
         <mat-row *matRowDef="let row; columns: listaColumnas;"></mat-row>
 
-        <ng-container matColumnDef="id">
-          <mat-header-cell *matHeaderCellDef mat-sort-header matSortDisableClear> Id </mat-header-cell>
-          <mat-cell *matCellDef="let factura"> {{factura.facId}} </mat-cell>
-        </ng-container>
-
         <ng-container matColumnDef="placa">
           <mat-header-cell *matHeaderCellDef mat-sort-header> Placa </mat-header-cell>
           <mat-cell *matCellDef="let factura"> {{factura.movPlaca}} </mat-cell>
@@ -48,7 +43,7 @@
         <ng-container matColumnDef="operaciones">
           <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
           <mat-cell *matCellDef="let factura">
-            <button mat-raised-button color="primary">Salida</button>
+            <button mat-raised-button color="primary" (click)="eliminarMovil(factura)">Eliminar</button>
           </mat-cell>
         </ng-container>
 

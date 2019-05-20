@@ -23,4 +23,9 @@ export class EstacionamientoService
   {
     return this.httpClient.post(this.API_URL + '/registrarmovil', movil);
   }
+
+  eliminarMovil(placa)
+  {
+    return this.httpClient.post<any>(this.API_URL + '/eliminarmovil', placa);
+  }
 }

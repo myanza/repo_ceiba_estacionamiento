@@ -3,7 +3,9 @@
 
   <app-registrarmovil fxFlex="20%" (recargar)="recargarListadoMoviles()"></app-registrarmovil>
 
-  <app-listadomoviles fxFlex="60%"></app-listadomoviles>
+  <app-listadomoviles fxFlex="60%" (eliminar)="eliminarMovilEstacionamiento($event)"></app-listadomoviles>
+
+  <app-eliminarmovil fxFlex="20%" (recargar)="recargarListadoMoviles()"></app-eliminarmovil>
 
 </div>
 

@@ -14,13 +14,20 @@ import { MatListModule, MatProgressSpinnerModule, MatCardModule,
   MatPaginatorModule, MatSortModule } from '@angular/material';
 import {MatRadioModule} from '@angular/material/radio';
 import { RegistrarmovilComponent } from './registrarmovil/registrarmovil.component';
+import { MensajeComponent } from './mensaje/mensaje.component';
+import { EliminarmovilComponent } from './eliminarmovil/eliminarmovil.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadomovilesComponent,
-    RegistrarmovilComponent
+    RegistrarmovilComponent,
+    MensajeComponent,
+    EliminarmovilComponent
+  ],
+  entryComponents: [
+    MensajeComponent
   ],
   imports: [
     BrowserModule,

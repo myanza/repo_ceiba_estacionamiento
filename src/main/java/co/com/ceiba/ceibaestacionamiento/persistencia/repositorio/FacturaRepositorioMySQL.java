@@ -3,16 +3,13 @@ package co.com.ceiba.ceibaestacionamiento.persistencia.repositorio;
 import java.util.List;
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import co.com.ceiba.ceibaestacionamiento.dominio.repositorio.FacturaRepositorio;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.FacturaEntity;
 
-@Component("facturaRepositorioMySQL")
-@Transactional
+@Component
 public class FacturaRepositorioMySQL implements FacturaRepositorio
 {
 	@Autowired

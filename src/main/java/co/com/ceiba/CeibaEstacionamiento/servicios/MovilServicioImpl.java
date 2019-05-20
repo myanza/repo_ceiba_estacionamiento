@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.com.ceiba.ceibaestacionamiento.dominio.Movil;
+import co.com.ceiba.ceibaestacionamiento.dominio.repositorio.MovilRepositorio;
 import co.com.ceiba.ceibaestacionamiento.dominio.servicios.MovilServicio;
 import co.com.ceiba.ceibaestacionamiento.persistencia.builders.MovilBuilder;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.MovilEntity;
@@ -15,17 +16,20 @@ import co.com.ceiba.ceibaestacionamiento.persistencia.repositorio.MovilRepositor
 public class MovilServicioImpl implements MovilServicio
 {
 	@Autowired
-	private MovilRepositorioData movilRepositorio;
+	private MovilRepositorio movilRepositorio;
 	
 	private MovilBuilder movilBuilder = new MovilBuilder();
+	
+	@Autowired
+	public MovilServicioImpl(MovilRepositorio movilRepositorio) {
+		
+	}
 
 	@Override
 	public boolean registrarMovil(Movil movil) 
 	{
 		MovilEntity movilEntity = movilBuilder.convertirAEntity(movil);
-		
-		System.out.println("--PLACA ="+movilEntity.getMovPlaca()+" CILINDRAJE = "+movilEntity.getMovCilindraje()+" TIPO MOVIL"+movilEntity.getMovTipoMovil());
-		
+
 		MovilEntity mov = movilRepositorio.save(movilEntity);
 		return mov != null;
 	}

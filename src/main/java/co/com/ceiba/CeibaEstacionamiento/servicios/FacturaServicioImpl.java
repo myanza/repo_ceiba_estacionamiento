@@ -28,7 +28,7 @@ public class FacturaServicioImpl implements FacturaServicio
 	public FacturaRepositorio facturaRepositorio;
 	
 	@Autowired
-	public FacturaServicioImpl(FacturaRepositorio facturaRepositorio) 
+	public void setFacturaRepositorio(FacturaRepositorio facturaRepositorio)
 	{
 		this.facturaRepositorio = facturaRepositorio;
 	}

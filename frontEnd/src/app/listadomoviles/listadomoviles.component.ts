@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter, Output} from '@angular/core';
 import { Router } from '@angular/router';
+import {merge, Observable, of as observableOf} from 'rxjs';
+import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import { EstacionamientoService } from '../estacionamiento.service';
+import { Factura } from '../factura';
 
 
 @Component({
@@ -10,16 +13,45 @@ import { EstacionamientoService } from '../estacionamiento.service';
 })
 export class ListadomovilesComponent implements OnInit
 {
-  moviles: [];
-  //selectedMovil: Bike;
+  cargando = true;
+  facturas: Factura[] = [];
 
-  constructor(private router: Router, private estacionamientoService: EstacionamientoService) {
+  listaColumnas = ['id', 'placa', 'tipoMovil', 'fechaIngreso', 'operaciones'];
 
+  @Output() public eliminar = new EventEmitter<Factura>();
+
+  constructor(private router: Router, private estacionamientoService: EstacionamientoService) {}
+
+  ngAfterViewInit()
+  {
+    this.getListadoMoviles();
   }
 
-  ngOnInit()
+  public getListadoMoviles()
   {
-    this.estacionamientoService.getListadoMovilesEstacionamiento.then(moviles => this.moviles = moviles);
+    merge()
+      .pipe(
+      startWith({}),
+      switchMap(() => {
+        this.cargando = true;
+        return this.estacionamientoService.getListadoMovilesEstacionamiento();
+      }),
+      map(data => {
+        this.cargando = false;
+        return data;
+      }),
+      catchError(() => {
+        this.cargando = false;
+        return observableOf([]);
+      })
+      ).subscribe(data => this.facturas = data as Factura[]);
+  }
+
+  ngOnInit() { }
+
+  registrarSalida(factura: Factura)
+  {
+    this.eliminar.emit(factura);
   }
 
 }

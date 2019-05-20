@@ -1,12 +1,59 @@
-<h2>Moviles</h2>
 
-<md-list>
-  <md-list-item *ngFor="let movil of moviles" (click)="getListadoMovilesEstacionamiento(movil)">
-    {{movil.model}}
-    <button md-raised-button (click)="eliminarMovil(movil); $event.stopPropagation()">Eliminar Movil</button>
-  </md-list-item>
-</md-list>
+<div class="container mat-elevation-z8">
 
-<p>
-  listadomoviles works!
-</p>
+  <div class="loading-shade" *ngIf="cargando">
+		<mat-spinner *ngIf="cargando"></mat-spinner>
+	</div>
+
+	<mat-card>
+
+    <mat-card-header>
+      <mat-card-title>
+	      <h1>Estacionamiento</h1>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <mat-table class="table"
+        [dataSource]="facturas"
+        matSort matSortActive="id"
+        matSortDisableClear
+        matSortDirection="desc">
+
+        <mat-header-row *matHeaderRowDef="listaColumnas"></mat-header-row>
+
+        <mat-row *matRowDef="let row; columns: listaColumnas;"></mat-row>
+
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header matSortDisableClear> Id </mat-header-cell>
+          <mat-cell *matCellDef="let factura"> {{factura.facId}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="placa">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Placa </mat-header-cell>
+          <mat-cell *matCellDef="let factura"> {{factura.movPlaca}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="tipoMovil">
+          <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
+          <mat-cell *matCellDef="let factura"> {{factura.tipoMovil}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="fechaIngreso">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Ingreso </mat-header-cell>
+          <mat-cell *matCellDef="let factura"> {{factura.facFechaIngreso}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="operaciones">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+          <mat-cell *matCellDef="let factura">
+            <button mat-raised-button color="primary">Salida</button>
+          </mat-cell>
+        </ng-container>
+
+      </mat-table>
+    </mat-card-content>
+  </mat-card>
+
+</div>

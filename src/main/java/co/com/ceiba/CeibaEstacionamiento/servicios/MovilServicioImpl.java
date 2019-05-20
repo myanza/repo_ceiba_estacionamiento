@@ -23,6 +23,9 @@ public class MovilServicioImpl implements MovilServicio
 	public boolean registrarMovil(Movil movil) 
 	{
 		MovilEntity movilEntity = movilBuilder.convertirAEntity(movil);
+		
+		System.out.println("--PLACA ="+movilEntity.getMovPlaca()+" CILINDRAJE = "+movilEntity.getMovCilindraje()+" TIPO MOVIL"+movilEntity.getMovTipoMovil());
+		
 		MovilEntity mov = movilRepositorio.save(movilEntity);
 		return mov != null;
 	}

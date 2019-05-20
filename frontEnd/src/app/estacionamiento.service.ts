@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import 'rxjs/add/operator/toPromise';
-import {Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { Factura } from './factura';
 
 
 @Injectable({
@@ -9,13 +10,17 @@ import {Observable} from 'rxjs';
 })
 export class EstacionamientoService
 {
-  API_URL = 'http://localhost:9091/parqueadero';
+  API_URL = 'http://localhost:8181/estacionamiento';
 
   constructor(private httpClient: HttpClient) {}
 
-  getListadoMovilesEstacionamiento(): Observable<Resultado>
+  getListadoMovilesEstacionamiento(): Observable<Factura>
   {
-    return this.httpClient.get<Resultado>
-      (this.API_URL + '/listadomoviles');
+    return this.httpClient.get<Factura>(this.API_URL + '/listadomoviles');
+  }
+
+  registrarMovil(movil)
+  {
+    return this.httpClient.post(this.API_URL + '/registrarmovil', movil);
   }
 }

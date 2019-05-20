@@ -45,7 +45,7 @@ public class Estacionamiento
 	
 	public void hayEspacioEstacionamiento(Movil movil)
 	{
-		if (movil.getTipoMovil() == CARRO) 
+		if (movil.getTipoMovil().equals(CARRO)) 
 		{
 			Integer cantCarrosEstacionamiento = this.facturaServicio.getCantidadMovilesByTipo(CARRO);
 			if (cantCarrosEstacionamiento >= CANTIDAD_MAXIMA_CARROS) 
@@ -187,7 +187,7 @@ public class Estacionamiento
 	
 	public double calcularValorExtendido(String tipoMovil, double cilindraje)
 	{
-		if(tipoMovil == MOTO && cilindraje > CILINDRAJE_VALOR_EXTENDIDO)
+		if(tipoMovil.equals(MOTO) && cilindraje > CILINDRAJE_VALOR_EXTENDIDO)
 			return costoEstadiaServicio.getCostoEstadiaBy(tipoMovil, "EXTENDIDO", "NO_APLICA");
 		return 0;
 	}

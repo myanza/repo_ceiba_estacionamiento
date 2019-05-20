@@ -1,55 +1,59 @@
-<mat-card>
+<div class="container mat-elevation-z8">
 
-  <mat-card-header>
-    <mat-card-title>
-      <h1>Registrar Movil</h1>
-    </mat-card-title>
-  </mat-card-header>
+  <mat-card>
 
-  <mat-card-content>
+    <mat-card-header>
+      <mat-card-title>
+        <h1>Registrar Móvil</h1>
+      </mat-card-title>
+    </mat-card-header>
 
-    <form #registrarmovilform="ngForm">
-      <div fxLayout="column">
+    <mat-card-content>
 
-        <label>Placa: </label>
-        <mat-form-field>
-          <input
-            name="placa"
-            matInput
-            [(ngModel)]="placa"
-            placeholder="Ingrese la placa"
-            required>
-        </mat-form-field>
+      <form #registrarmovilform="ngForm">
+        <div fxLayout="column">
 
-        <mat-list>
-            <label>Tipo de Movil: </label>
-            <mat-radio-group matInput name="tipoMovil" [(ngModel)]="tipoMovil" required>
-              <mat-radio-button value="CARRO">Carro</mat-radio-button>
-              <mat-radio-button value="MOTO">Moto</mat-radio-button>
-            </mat-radio-group>
-        </mat-list>
-
-        <div *ngIf="tipoMovil === 'MOTO'">
-          <label>Cilindraje: </label>
+          <label>Placa: </label>
           <mat-form-field>
             <input
-              name="cilindraje"
-              type="number"
-              [(ngModel)]="cilindraje"
-              value="0.0"
+              name="placa"
               matInput
-              required
-              placeholder="Ingrese el cilindraje">
+              [(ngModel)]="placa"
+              placeholder="Ingrese la placa"
+              required>
           </mat-form-field>
+
+          <mat-list>
+              <label>Tipo de Movil: </label>
+              <mat-radio-group matInput name="tipoMovil" [(ngModel)]="tipoMovil" required>
+                <mat-radio-button value="CARRO">Carro</mat-radio-button>
+                <mat-radio-button value="MOTO">Moto</mat-radio-button>
+              </mat-radio-group>
+          </mat-list>
+
+          <div *ngIf="tipoMovil === 'MOTO'">
+            <label>Cilindraje: </label>
+            <mat-form-field>
+              <input
+                name="cilindraje"
+                type="number"
+                [(ngModel)]="cilindraje"
+                value="0.0"
+                matInput
+                required
+                placeholder="Ingrese el cilindraje">
+            </mat-form-field>
+          </div>
+
         </div>
+      </form>
 
-      </div>
-    </form>
+    </mat-card-content>
 
-  </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button (click)="registrarMovil()" color="primary">Registrar</button>
+    </mat-card-actions>
 
-  <mat-card-actions align="end">
-    <button mat-raised-button (click)="registrarMovil()" color="primary">Registrar</button>
-  </mat-card-actions>
+  </mat-card>
 
-</mat-card>
+</div>

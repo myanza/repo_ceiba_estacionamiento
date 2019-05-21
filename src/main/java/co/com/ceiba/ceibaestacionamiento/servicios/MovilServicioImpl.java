@@ -10,7 +10,6 @@ import co.com.ceiba.ceibaestacionamiento.dominio.repositorio.MovilRepositorio;
 import co.com.ceiba.ceibaestacionamiento.dominio.servicios.MovilServicio;
 import co.com.ceiba.ceibaestacionamiento.persistencia.builders.MovilBuilder;
 import co.com.ceiba.ceibaestacionamiento.persistencia.entidades.MovilEntity;
-import co.com.ceiba.ceibaestacionamiento.persistencia.repositorio.MovilRepositorioData;
 
 @Service
 public class MovilServicioImpl implements MovilServicio

@@ -32,7 +32,7 @@ public class MovilBuilder
 			movilEntity = new MovilEntity();
 			movilEntity.setMovPlaca(movil.getPlaca());
 			
-			if (movil.getTipoMovil().equals("CARRO")) 
+			if (("CARRO").equals(movil.getTipoMovil())) 
 			{
 				movilEntity.setMovCilindraje(-1);
 				movilEntity.setMovTipoMovil("CARRO");

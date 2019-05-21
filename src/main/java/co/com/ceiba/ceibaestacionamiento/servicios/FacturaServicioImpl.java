@@ -128,8 +128,7 @@ public class FacturaServicioImpl implements FacturaServicio
 		Estacionamiento estacionamiento = new Estacionamiento(this, movilServicio, costoEstadiaServicio);
 		Factura factura = estacionamiento.eliminarMovil(placa);
 		
-		FacturaDTO facturaDTO = facturaDTOBuilder.convertToDTO(factura);
-		return facturaDTO;
+		return facturaDTOBuilder.convertToDTO(factura);
 	}
 	
 }

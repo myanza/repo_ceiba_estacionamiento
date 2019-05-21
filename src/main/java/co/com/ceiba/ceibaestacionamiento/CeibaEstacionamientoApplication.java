@@ -3,7 +3,6 @@ package co.com.ceiba.ceibaestacionamiento;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 @ComponentScan(basePackages={"co.com.ceiba.ceibaestacionamiento.controller",
 		"co.com.ceiba.ceibaestacionamiento.dbconfiguracion",

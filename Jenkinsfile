@@ -20,7 +20,8 @@ pipeline {
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']],
  				doGenerateSubmoduleConfigurations: false, extensions: [], gitTool:
  				'Git_Centos', submoduleCfg: [], userRemoteConfigs: [[credentialsId:
- 				'GitHub_myanza', url:'https://github.com/myanza/repo_ceiba_estacionamiento']]])    
+ 				'GitHub_myanza', url:'https://github.com/myanza/repo_ceiba_estacionamiento']]])
+ 				sh 'gradle --b ./build.gradle compileJava'    
 			}     
 		}       
 		

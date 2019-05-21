@@ -22,6 +22,8 @@ import co.com.ceiba.ceibaestacionamiento.dominio.Movil;
 import co.com.ceiba.ceibaestacionamiento.servicios.CostoEstadiaServicioImpl;
 import co.com.ceiba.ceibaestacionamiento.servicios.FacturaServicioImpl;
 import co.com.ceiba.ceibaestacionamiento.servicios.MovilServicioImpl;
+import co.com.ceiba.ceibaestacionamiento.servicios.excepciones.MovilNoRegistradoException;
+import co.com.ceiba.ceibaestacionamiento.servicios.excepciones.MovilRegistradoException;
 import co.com.ceiba.ceibaestacionamiento.servicios.excepciones.SinAutorizacionException;
 import co.com.ceiba.ceibaestacionamiento.servicios.excepciones.SinEspacioException;
 
@@ -54,6 +56,7 @@ public class FacturaTest
 	public static final String SIN_ESPACIO_ESTACIONAMIENTO = "El estacionamiento no cuenta con espacio disponible.";
 	public static final String SIN_AUTORIZACION_INGRESO = "No esta autorizado a ingresar.";
 	public static final String MOVIL_REGISTRADO = "Este movil ya se encuentra en el estacionamiento.";
+	public static final String MOVIL_NO_ENCONTRADO_ESTACIONAMIENTO = "El movil no fue encontrado en el estacionamiento";
 	public static final int MOVIL_ENCONTRADO = 1;
 	public static final int UNA_HORA_MENOS = -1;
 	public static final int UN_DIA_MENOS = -24;
@@ -194,7 +197,7 @@ public class FacturaTest
 	public void noIngresaEnDiaPermitidoTest() 
 	{
 		MovilTestDataBuilder movilTestDataBuilder = new MovilTestDataBuilder();
-		Movil carro = movilTestDataBuilder.withPlaca("AGH-123").withCilindraje(-1).withTipoMovil(MOTO).build();
+		Movil carro = movilTestDataBuilder.withPlaca("AGH-123").withCilindraje(1).withTipoMovil(MOTO).build();
 		
 		Estacionamiento esta = Mockito.mock(Estacionamiento.class);
 		
@@ -208,6 +211,25 @@ public class FacturaTest
 		catch (SinAutorizacionException e) 
 		{
 			Assert.assertEquals(SIN_AUTORIZACION_INGRESO, e.getMessage());
+		}
+	}
+	
+	@Test
+	public void estaEnEstacionamientoTest() 
+	{
+		MovilTestDataBuilder movilTestDataBuilder = new MovilTestDataBuilder();
+		Movil carro = movilTestDataBuilder.withPlaca("BGH-123").withCilindraje(-1).withTipoMovil(CARRO).build();
+
+		Mockito.when(facturaServicio.getMovilEstacionamientoByPlaca(Mockito.anyString())).thenReturn(MOVIL_ENCONTRADO);
+
+		try 
+		{
+			estacionamiento.registrarMovil(carro);
+			fail();
+		} 
+		catch (MovilRegistradoException e) 
+		{
+			Assert.assertEquals(MOVIL_REGISTRADO, e.getMessage());
 		}
 	}
 	
@@ -291,6 +313,26 @@ public class FacturaTest
 		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
 		// assert
 		Assert.assertEquals(valor_esperado, factObtenida.getValor(), 0.0);
+	}
+	
+	@Test
+	public void movilNoExisteEstacionamientoTest() 
+	{
+		// arrange
+		int diezhorasMenos = -10;
+	    Movil movil = arrangeEliminarMovil(MOTO, "VBN-123", 650, diezhorasMenos);
+	    
+		Mockito.when(facturaServicio.getMovilEstacionamientoByPlaca(Mockito.anyString())).thenReturn(MOVIL_NO_REGISTRADO);
+		
+		try 
+		{
+			estacionamiento.eliminarMovil(movil.getPlaca());
+			fail();
+		} 
+		catch (MovilNoRegistradoException e) 
+		{
+			Assert.assertEquals(MOVIL_NO_ENCONTRADO_ESTACIONAMIENTO, e.getMessage());
+		}
 	}
 	
 	private Movil arrangeEliminarMovil(String tipoMovil, String placa, double cilindraje, int tiempoLapso)

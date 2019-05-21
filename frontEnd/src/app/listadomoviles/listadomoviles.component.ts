@@ -69,10 +69,10 @@ export class ListadomovilesComponent implements OnInit
 
     dialogref.afterClosed().subscribe(result =>
     {
-        if(result != null)
-        {
-          this.eliminar.emit(result);
-        }
+      if(result != null)
+      {
+        this.eliminar.emit(result);
+      }
     });
 
 

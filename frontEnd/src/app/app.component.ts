@@ -11,6 +11,7 @@ import { EliminarmovilComponent } from './eliminarmovil/eliminarmovil.component'
 export class AppComponent
 {
   title = 'Estacionamiento';
+  public placa: string;
 
   @ViewChild(ListadomovilesComponent) private listadoMoviles: ListadomovilesComponent;
 
@@ -23,7 +24,7 @@ export class AppComponent
 
   public eliminarMovilEstacionamiento(factura)
   {
-    this.eliminarMovil.cargarDatos(factura);
-    this.eliminarMovil.eliminarMovil();
+    this.placa = factura.movPlaca;
+    this.eliminarMovil.eliminarMovil(this.placa);
   }
 }

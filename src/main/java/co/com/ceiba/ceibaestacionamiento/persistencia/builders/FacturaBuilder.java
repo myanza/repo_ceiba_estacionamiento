@@ -36,7 +36,7 @@ public class FacturaBuilder
 		FacturaEntity facturaEntity = new FacturaEntity();
 		MovilBuilder movilBuilder = new MovilBuilder();
 		
-		if (facturaEntity != null) 
+		if (factura != null) 
 		{
 			facturaEntity.setFacFechaIngreso(factura.getFechaIngreso());
 			facturaEntity.setFacFechaSalida(factura.getFechaSalida());

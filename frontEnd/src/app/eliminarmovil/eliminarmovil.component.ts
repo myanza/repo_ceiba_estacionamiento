@@ -22,21 +22,11 @@ export class EliminarmovilComponent implements OnInit
   ngOnInit() {
   }
 
-  public cargarDatos(factura)
+  public eliminarMovil(placa)
   {
-    if (factura)
+    if (placa !== '')
     {
-      this.placa = factura.movPlaca;
-      this.cilindraje = factura.cilindraje;
-      this.fechaIngreso = factura.facFechaIngreso;
-    }
-  }
-
-  public eliminarMovil()
-  {
-    if (this.placa !== '')
-    {
-      this.estacionamientoService.eliminarMovil(this.placa).subscribe((response) =>
+      this.estacionamientoService.eliminarMovil(placa).subscribe((response) =>
       {
         if(response.facValor)
         {
@@ -44,15 +34,12 @@ export class EliminarmovilComponent implements OnInit
           {
             data: {
               titulo: 'Eliminación Exitosa',
-              texto: 'El vehículo de placa ' + this.placa + ' fue eliminado exitosamente. Valor total: $' + response.facValor + ' pesos.'
+              texto: 'El vehículo de placa ' + placa + ' fue eliminado exitosamente. Valor total: $' + response.facValor + ' pesos.'
             }
           });
           console.log(response);
         }
         this.recargar.emit();
-        this.placa = '';
-        this.cilindraje = 1;
-        this.fechaIngreso = '';
       },
       (error) =>
       {
@@ -60,7 +47,7 @@ export class EliminarmovilComponent implements OnInit
           {
           data: {
             titulo: 'Error',
-            texto: 'Debe seleccionar un móvil a eliminar.'
+            texto: 'Ocurrió un error en la eliminación.'
           }
         });
       });

@@ -15,7 +15,7 @@ public class Movil
 		this.placa = placa;
 		this.tipoMovil = tipoMovil;
 		
-		if(tipoMovil == "CARRO")
+		if(("CARRO").equals(tipoMovil))
 		{
 			this.cilindraje = -1;
 		}

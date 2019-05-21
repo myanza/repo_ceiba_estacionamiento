@@ -7,8 +7,4 @@ public class MovilRegistradoException extends IllegalArgumentException
 	public MovilRegistradoException(String mensaje) {
 		super(mensaje);
 	}
-	
-	public long getCodigoError(){
-		return serialVersionUID;
-	}
 }

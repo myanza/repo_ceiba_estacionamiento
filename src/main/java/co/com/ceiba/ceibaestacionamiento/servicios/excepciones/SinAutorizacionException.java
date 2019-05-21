@@ -7,8 +7,4 @@ public class SinAutorizacionException extends RuntimeException
 	public SinAutorizacionException(String mensaje) {
 		super(mensaje);
 	}
-
-	public long getCodigoError() {
-		return serialVersionUID;
-	}
 }

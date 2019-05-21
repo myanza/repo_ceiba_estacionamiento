@@ -8,9 +8,4 @@ public class SinEspacioException extends RuntimeException
 	{
 		super(mensaje);
 	}
-	
-	public long getCodigoError()
-	{
-		return serialVersionUID;
-	}
 }

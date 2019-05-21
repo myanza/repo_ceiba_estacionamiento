@@ -19,7 +19,6 @@ describe('workspace-project App', () =>
     page.navigateTo();
     var tbxplaca = element(by.name('placaRegistro'));
     element(By.id('CARRO')).click();
-    //var tbxcilindraje = element(by.name('cilindrajeRegistro'));
 
     tbxplaca.sendKeys('FGH-123');
 
@@ -30,11 +29,6 @@ describe('workspace-project App', () =>
 
     expect(cells.get(0).getText()).toEqual('FGH-123');
     expect(cells.get(1).getText()).toEqual('CARRO');
-
-    /*element.all(by.repeater('factura in facturas')).then((posts) => {
-        var placa = posts[0].element(by.name('placa'));
-        expect(placa.getText()).toEqual('FGH-123');
-    });*/
   });
 
   afterEach(async () => {

@@ -1,1 +1,7 @@
-
+.titulo {
+  position: center;
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+  font-family: 'Helvetica Neue',  Helvetica, Arial, sans-serif;
+}

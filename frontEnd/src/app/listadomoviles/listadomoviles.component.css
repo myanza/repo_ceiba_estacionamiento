@@ -4,3 +4,9 @@
   margin: auto;
   padding: 10px;
 }
+
+.mat-header-cell {
+  font-family: 'Helvetica Neue',  Helvetica, Arial, sans-serif;
+  font-size: 1.3em;
+  color: blueviolet;
+}

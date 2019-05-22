@@ -25,7 +25,7 @@
 
             <mat-row *matRowDef="let row; columns: listaColumnas;"></mat-row>
 
-            <ng-container matColumnDef="placa">
+            <ng-container matColumnDef="placa" class="listaColumnas">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Placa </mat-header-cell>
               <mat-cell *matCellDef="let factura" class="placaMovil"> {{factura.movPlaca}} </mat-cell>
             </ng-container>

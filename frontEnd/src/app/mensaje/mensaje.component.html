@@ -1,5 +1,5 @@
-<h2 mat-dialog-title>{{data.titulo}}</h2>
-<mat-dialog-content class id="textoEvento">{{data.texto}}</mat-dialog-content>
+<h2 mat-dialog-title class="tituloModal">{{data.titulo}}</h2>
+<mat-dialog-content class="contenidoModal" id="textoEvento">{{data.texto}}</mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-raised-button (click)="cerrarMensaje()">Aceptar</button>
+  <button mat-raised-button (click)="cerrarMensaje()" color="primary" class="btnAceptar">Aceptar</button>
 </mat-dialog-actions>

@@ -5,3 +5,32 @@
   padding: 10px;
   padding-bottom: 20px;
 }
+
+.contenido {
+  padding-left: 20px;
+}
+
+.label {
+  font-size: 1.2em;
+}
+
+.divcilindraje {
+  padding-top: 20px;
+}
+
+.rdbcarro {
+  padding-right: 10px;
+}
+
+.fdplaca {
+  padding-left: 60px;
+}
+
+.fdcilindraje {
+  padding-left: 30px;
+}
+
+.btnRegistrar {
+  padding-left: 90px;
+  padding-top: 15px;
+}

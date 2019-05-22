@@ -1,0 +1,12 @@
+.tituloModal {
+  background-color: #B899E7;
+  text-align: center;
+}
+
+.contenidoModal {
+  font-size: 1.2em;
+}
+
+.btnAceptar {
+  padding-left: 60px,
+}

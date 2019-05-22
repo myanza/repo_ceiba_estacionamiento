@@ -1,5 +1,6 @@
 package co.com.ceiba.ceibaestacionamiento.servicios;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -38,7 +39,10 @@ public class FacturaServicioImpl implements FacturaServicio
 	{
 		FacturaDTOBuilder facturaDTOBuilder = new FacturaDTOBuilder();
 		List<FacturaEntity> facturasEntity = facturaRepositorio.getListadoMovilesEstacionamiento();
-		return facturasEntity.stream().map(facturaDTOBuilder::convertToDTO).collect(Collectors.toList());
+		if(!facturasEntity.isEmpty())
+			return facturasEntity.stream().map(facturaDTOBuilder::convertToDTO).collect(Collectors.toList());
+		else
+			return new ArrayList<>();
 	}
 	
 	public Movil crearMovilDominio(MovilDTO movilDTO)

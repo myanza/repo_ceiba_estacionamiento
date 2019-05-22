@@ -15,7 +15,7 @@ import {MatDialog, MatDialogRef} from '@angular/material';
 })
 export class ListadomovilesComponent implements OnInit
 {
-  cargando = true;
+  public hayMoviles: boolean = false;
   facturas: Factura[] = [];
 
   listaColumnas = ['placa', 'tipoMovil', 'fechaIngreso', 'operaciones'];
@@ -35,26 +35,24 @@ export class ListadomovilesComponent implements OnInit
       .pipe(
       startWith({}),
       switchMap(() => {
-        this.cargando = true;
         return this.estacionamientoService.getListadoMovilesEstacionamiento();
       }),
       map(data => {
-        this.cargando = false;
         return data;
       }),
       catchError(() => {
-        this.cargando = false;
         return observableOf([]);
       })
-      ).subscribe(data => this.facturas = data as Factura[]);
+      ).subscribe(data =>
+        {
+          this.facturas = data as Factura[];
+          if (this.facturas.length > 0) { this.hayMoviles = true; }
+          else { this.hayMoviles = false; }
+        }
+      );
   }
 
   ngOnInit() { }
-
-  /*eliminarMovil(factura)
-  {
-    this.eliminar.emit(factura);
-  }*/
 
   eliminarMovil(factura)
   {
@@ -69,8 +67,7 @@ export class ListadomovilesComponent implements OnInit
 
     dialogref.afterClosed().subscribe(result =>
     {
-      if(result != null)
-      {
+      if (result != null){
         this.eliminar.emit(result);
       }
     });

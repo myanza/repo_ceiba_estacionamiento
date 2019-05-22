@@ -316,6 +316,19 @@ public class FacturaTest
 	}
 	
 	@Test
+	public void cobroCarroUnDia10HorasTest() 
+	{
+		// arrange
+		int undiadiezhorasMenos = -34;
+		int valor_esperado = 16000;
+	    Movil movil = arrangeEliminarMovil(CARRO, "KJL-670", SIN_CILINDRAJE, undiadiezhorasMenos);
+		// act
+		Factura factObtenida = estacionamiento.eliminarMovil(movil.getPlaca());
+		// assert
+		Assert.assertEquals(valor_esperado, factObtenida.getValor(), 0.0);
+	}
+	
+	@Test
 	public void movilNoExisteEstacionamientoTest() 
 	{
 		// arrange

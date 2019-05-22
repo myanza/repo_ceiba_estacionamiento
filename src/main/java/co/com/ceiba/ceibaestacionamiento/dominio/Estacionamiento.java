@@ -171,8 +171,8 @@ public class Estacionamiento
 				valores.add(1, horasRestantes);
 			else
 			{
-				valores.add(1, 0);
 				valores.add(0, valores.get(0) + 1);
+				valores.add(1, 0);
 			}
 		}
 		return valores;

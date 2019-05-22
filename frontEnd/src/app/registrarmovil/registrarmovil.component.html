@@ -51,7 +51,10 @@
     </mat-card-content>
 
     <mat-card-actions align="end">
-      <button mat-raised-button (click)="registrarMovil()" color="primary" name="btnRegistrar">Registrar</button>
+      <button mat-raised-button (click)="registrarMovil()"
+      color="primary"
+      name="btnRegistrar"
+      [disabled]="!registrarmovilform.valid">Registrar</button>
     </mat-card-actions>
 
   </mat-card>

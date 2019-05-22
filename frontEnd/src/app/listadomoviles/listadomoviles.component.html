@@ -11,40 +11,51 @@
 
     <mat-card-content>
 
-      <mat-table class="table"
-        [dataSource]="facturas"
-        matSort matSortActive="id"
-        matSortDisableClear
-        matSortDirection="desc"
-        name="tablaMoviles">
+      <div *ngIf="hayMoviles === true">
+        <mat-table class="table"
+          [dataSource]="facturas"
+          matSort matSortActive="id"
+          matSortDisableClear
+          matSortDirection="desc"
+          id="tablaMoviles">
 
-        <mat-header-row *matHeaderRowDef="listaColumnas"></mat-header-row>
+          <section id="filaTabla">
 
-        <mat-row *matRowDef="let row; columns: listaColumnas;"></mat-row>
+            <mat-header-row *matHeaderRowDef="listaColumnas"></mat-header-row>
 
-        <ng-container matColumnDef="placa">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Placa </mat-header-cell>
-          <mat-cell *matCellDef="let factura"> {{factura.movPlaca}} </mat-cell>
-        </ng-container>
+            <mat-row *matRowDef="let row; columns: listaColumnas;"></mat-row>
 
-        <ng-container matColumnDef="tipoMovil">
-          <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
-          <mat-cell *matCellDef="let factura"> {{factura.tipoMovil}} </mat-cell>
-        </ng-container>
+            <ng-container matColumnDef="placa">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Placa </mat-header-cell>
+              <mat-cell *matCellDef="let factura" class="placaMovil"> {{factura.movPlaca}} </mat-cell>
+            </ng-container>
 
-        <ng-container matColumnDef="fechaIngreso">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Ingreso </mat-header-cell>
-          <mat-cell *matCellDef="let factura"> {{factura.facFechaIngreso}} </mat-cell>
-        </ng-container>
+            <ng-container matColumnDef="tipoMovil">
+              <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
+              <mat-cell *matCellDef="let factura"> {{factura.tipoMovil}} </mat-cell>
+            </ng-container>
 
-        <ng-container matColumnDef="operaciones">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-          <mat-cell *matCellDef="let factura">
-            <button mat-raised-button color="primary" (click)="eliminarMovil(factura)">Eliminar</button>
-          </mat-cell>
-        </ng-container>
+            <ng-container matColumnDef="fechaIngreso">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Ingreso </mat-header-cell>
+              <mat-cell *matCellDef="let factura"> {{factura.facFechaIngreso}} </mat-cell>
+            </ng-container>
 
-      </mat-table>
+            <ng-container matColumnDef="operaciones">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+              <mat-cell *matCellDef="let factura">
+                <button mat-raised-button color="primary" (click)="eliminarMovil(factura)" name="btnEliminar">Eliminar</button>
+              </mat-cell>
+            </ng-container>
+
+          </section>
+
+        </mat-table>
+      </div>
+
+      <div *ngIf="hayMoviles === false">
+        <i>En el momento no hay móviles en el estacionamiento.</i>
+      </div>
+
     </mat-card-content>
   </mat-card>
 
